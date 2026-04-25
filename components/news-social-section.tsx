@@ -27,10 +27,10 @@ const socialPosts: NewsItem[] = [
   },
 ]
 
-function MoreButton({ label = "더 보기" }: { label?: string }) {
+function MoreButton({ label = "더 보기", href = "/press" }: { label?: string; href?: string }) {
   return (
     <Link
-      href="#"
+      href={href}
       className="inline-flex items-center justify-center rounded-full border border-border px-4 py-1.5 text-xs font-medium text-foreground/80 transition-colors hover:border-primary hover:text-primary"
     >
       {label}
@@ -60,7 +60,7 @@ export function NewsSocialSection() {
       <h2 id="news-social-heading" className="sr-only">
         최신 뉴스 및 소셜 미디어
       </h2>
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 py-16 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-24">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-4 py-12 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-24">
         {/* 최신뉴스 */}
         <div className="flex flex-col">
           <div className="flex items-center justify-between pb-4">

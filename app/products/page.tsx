@@ -3,6 +3,8 @@ import { SiteFooter } from "@/components/site-footer"
 import { ProductsHeader } from "@/components/products/products-header"
 import { ProductsIntro } from "@/components/products/products-intro"
 import { ProductGrid } from "@/components/products/product-grid"
+import { RevercellSection } from "@/components/products/revercell-section"
+import { DeepSeaSection } from "@/components/products/deepsea-section"
 
 export default function ProductsPage() {
   return (
@@ -12,6 +14,8 @@ export default function ProductsPage() {
         <ProductsHeader />
         <ProductsIntro />
         <ProductGrid />
+        <RevercellSection />
+        <DeepSeaSection />
       </main>
       <SiteFooter />
     </div>

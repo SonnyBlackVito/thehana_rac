@@ -14,7 +14,7 @@ const products: Product[] = [
   {
     title: "혈액 활성화기",
     description: ["화학 첨가물 없이, 오직", "내 혈액으로 완성하는", "자가 치유의 혁신"],
-    image: "/product-blood-activator.jpg",
+    image: "/home-product-activator.png",
     imageAlt: "혈액 활성화기 - ACT PRO PRP 활성화 장비",
     background: "bg-[#d9d9d9]",
     showMore: true,
@@ -22,15 +22,15 @@ const products: Product[] = [
   {
     title: "리버셀 주사",
     description: ["세포의 시간을 되돌리는", "필수 에너지 루틴"],
-    image: "/product-injection.jpg",
-    imageAlt: "리버셀 주사 장비",
+    image: "/home-product-bloodbag.png",
+    imageAlt: "리버셀 주사 - 혈액 백",
     background: "bg-secondary",
   },
   {
     title: "심해수",
     description: ["마시는 순간 시작되는", "리버스 에이징"],
-    image: "/product-deepsea.jpg",
-    imageAlt: "심해수 제품",
+    image: "/home-product-rewater.png",
+    imageAlt: "심해수 REWATER 파우치",
     background: "bg-secondary",
   },
 ]
@@ -76,8 +76,8 @@ function ProductCard({ product }: { product: Product }) {
 
 export function ProductsSection() {
   return (
-    <section aria-labelledby="products-heading" className="w-full bg-background pb-20 pt-8">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <section aria-labelledby="products-heading" className="w-full bg-background pb-14 pt-6 sm:pb-20 sm:pt-8">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <div className="flex flex-col items-center gap-4 pb-12 text-center">
           <div className="flex items-center gap-3">
             <h2 id="products-heading" className="text-2xl font-bold text-foreground md:text-[28px]">

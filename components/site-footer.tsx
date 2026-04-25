@@ -21,16 +21,16 @@ function FooterWordmark() {
 export function SiteFooter() {
   return (
     <footer className="w-full bg-brand-footer text-background">
-      <div className="mx-auto max-w-[1400px] px-6 py-14 lg:px-10">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
+      <div className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6 sm:py-12 lg:px-10 lg:py-14">
+        <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
           {/* Left column: logo + company info */}
           <div>
             <FooterWordmark />
 
-            <div className="mt-10 space-y-3 text-sm text-background/80">
-              <p className="text-[15px] font-semibold text-background">㈜세일즈코어</p>
-              <p>
-                <span className="mr-4">대표이사 : 한재선</span>
+            <div className="mt-6 space-y-2 text-[13px] leading-relaxed text-background/80 sm:mt-10 sm:space-y-3 sm:text-sm">
+              <p className="text-[14px] font-semibold text-background sm:text-[15px]">㈜세일즈코어</p>
+              <p className="flex flex-wrap gap-x-4 gap-y-1">
+                <span>대표이사 : 한재선</span>
                 <span>사업자등록번호 : 361-81-00506</span>
               </p>
               <p>TEL : 010-8190-1627</p>
@@ -39,10 +39,13 @@ export function SiteFooter() {
 
           {/* Right column: branch addresses */}
           <div>
-            <dl className="space-y-2 text-sm text-background/80">
+            <dl className="space-y-3 text-[13px] leading-relaxed text-background/80 sm:space-y-2 sm:text-sm">
               {branches.map((branch) => (
-                <div key={branch.label} className="flex items-start gap-6">
-                  <dt className="w-28 shrink-0 text-background">{branch.label}</dt>
+                <div
+                  key={branch.label}
+                  className="flex flex-col gap-0.5 sm:flex-row sm:items-start sm:gap-6"
+                >
+                  <dt className="text-background sm:w-28 sm:shrink-0">{branch.label}</dt>
                   <dd className="flex-1">{branch.address}</dd>
                 </div>
               ))}
@@ -51,19 +54,26 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom row */}
-        <div className="mt-14 flex flex-col gap-6 border-t border-background/10 pt-8 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-4 text-xs text-background/60 md:flex-row md:items-center md:gap-10">
-            <div className="flex items-center gap-8">
-              <Link href="#" className="text-sm text-background hover:text-primary-foreground">
-                개인정보처리방침
-              </Link>
-              <Link href="#" className="text-sm text-background/80 hover:text-background">
-                이메일무단수집거부
-              </Link>
-            </div>
+        <div className="mt-10 flex flex-col gap-6 border-t border-background/10 pt-6 sm:mt-14 sm:pt-8 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-background/60 sm:gap-x-8">
+            <Link
+              href="#"
+              className="text-[13px] text-background hover:text-primary-foreground sm:text-sm"
+            >
+              개인정보처리방침
+            </Link>
+            <Link
+              href="#"
+              className="text-[13px] text-background/80 hover:text-background sm:text-sm"
+            >
+              이메일무단수집거부
+            </Link>
           </div>
 
-          <nav aria-label="소셜 및 스토어 링크" className="flex items-center gap-4">
+          <nav
+            aria-label="소셜 및 스토어 링크"
+            className="flex flex-wrap items-center gap-3 sm:gap-4"
+          >
             <Link
               href="#"
               aria-label="인바디스토어"
@@ -91,7 +101,7 @@ export function SiteFooter() {
           </nav>
         </div>
 
-        <p className="mt-6 text-xs text-background/50">
+        <p className="mt-5 text-[11px] leading-relaxed text-background/50 sm:mt-6 sm:text-xs">
           Copyright© 2026 by Salescore Co., Ltd. All rights reserved
         </p>
       </div>

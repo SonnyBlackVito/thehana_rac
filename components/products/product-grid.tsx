@@ -7,12 +7,9 @@ type Product = {
 }
 
 const products: Product[] = [
-  { name: "혈액활성화기", image: "/product-blood-activator.jpg", alt: "혈액활성화기" },
-  { name: "혈액활성화기 MINI", image: "/product-activator-mini.jpg", alt: "혈액활성화기 MINI" },
-  { name: "혈액 분리 장치", image: "/product-injection.jpg", alt: "혈액 분리 장치" },
-  { name: "ACT PRF", image: "/product-blood-activator.jpg", alt: "ACT PRF" },
-  { name: "ACT PRF D", image: "/product-activator-mini.jpg", alt: "ACT PRF D" },
-  { name: "ACT BMS 30", image: "/product-injection.jpg", alt: "ACT BMS 30" },
+  { name: "혈액활성화기", image: "/grid-activator.png", alt: "혈액활성화기" },
+  { name: "혈액활성화기 MINI", image: "/grid-activator-mini.png", alt: "혈액활성화기 MINI" },
+  { name: "혈액 분리 장치", image: "/grid-blood-separator.png", alt: "혈액 분리 장치" },
 ]
 
 export function ProductGrid() {

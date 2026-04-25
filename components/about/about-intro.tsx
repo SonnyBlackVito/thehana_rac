@@ -2,18 +2,21 @@ import Image from "next/image"
 
 export function AboutIntro() {
   return (
-    <section aria-labelledby="about-intro-heading" className="px-6 pt-16 lg:px-10 lg:pt-24">
+    <section aria-labelledby="about-intro-heading" className="px-4 pt-10 sm:px-6 sm:pt-16 lg:px-10 lg:pt-24">
       <div className="mx-auto max-w-[1200px]">
         <div className="flex flex-col items-center">
           <div className="relative w-full max-w-[900px]">
             <Image
-              src="/thehana-mosaic.jpg"
-              alt="수백 명의 인물 사진으로 구성된 THEHANA REVERSE AGING CENTER 로고"
-              width={1200}
-              height={700}
+              src="/thehana-mosaic.png"
+              alt="수백 명의 인물 사진으로 구성된 THEHANA 로고"
+              width={1840}
+              height={600}
               priority
               className="h-auto w-full"
             />
+            <p className="mt-4 text-center text-[15px] font-light tracking-[0.35em] text-foreground md:text-[18px] md:tracking-[0.45em]">
+              REVERSE AGING CENTER
+            </p>
           </div>
 
           <h2

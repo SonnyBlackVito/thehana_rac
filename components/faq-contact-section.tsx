@@ -10,11 +10,11 @@ export function FaqContactSection() {
   const [activeTab, setActiveTab] = useState<(typeof tabs)[number]>("혈액 활성화기")
 
   return (
-    <section aria-labelledby="faq-contact-heading" className="w-full bg-background pb-24">
+    <section aria-labelledby="faq-contact-heading" className="w-full bg-background pb-16 sm:pb-24">
       <h2 id="faq-contact-heading" className="sr-only">
         자주 찾는 질문 및 고객 지원
       </h2>
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 lg:grid-cols-2 lg:px-10">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-10">
         {/* LEFT: FAQ */}
         <div className="flex flex-col">
           <div className="flex items-center gap-3">
@@ -33,7 +33,7 @@ export function FaqContactSection() {
           <div
             role="tablist"
             aria-label="FAQ 카테고리"
-            className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-4 border-b border-border pb-3"
+            className="mt-8 -mx-4 flex items-center gap-x-6 overflow-x-auto border-b border-border px-4 pb-3 [scrollbar-width:none] sm:mt-10 sm:mx-0 sm:flex-wrap sm:gap-x-10 sm:gap-y-4 sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
           >
             {tabs.map((tab) => {
               const isActive = tab === activeTab
@@ -44,7 +44,7 @@ export function FaqContactSection() {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setActiveTab(tab)}
-                  className={`relative -mb-[13px] pb-3 text-[15px] transition-colors ${
+                  className={`relative -mb-[13px] shrink-0 pb-3 text-[14px] transition-colors sm:text-[15px] ${
                     isActive
                       ? "font-semibold text-primary"
                       : "font-medium text-brand-text hover:text-foreground"
