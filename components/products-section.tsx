@@ -1,25 +1,29 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
 type Product = {
-  title: string
-  description: string[]
-  image: string
-  imageAlt: string
-  background: string
-  showMore?: boolean
-  href?: string
-}
+  title: string;
+  description: string[];
+  image: string;
+  imageAlt: string;
+  background: string;
+  showMore?: boolean;
+  href?: string;
+};
 
 const products: Product[] = [
   {
     title: "혈액 활성화기",
-    description: ["화학 첨가물 없이, 오직", "내 혈액으로 완성하는", "자가 치유의 혁신"],
+    description: [
+      "화학 첨가물 없이, 오직",
+      "내 혈액으로 완성하는",
+      "자가 치유의 혁신",
+    ],
     image: "/home-product-activator.png",
     imageAlt: "혈액 활성화기 - ACT PRO PRP 활성화 장비",
-    background: "bg-[#d9d9d9]",
+    background: "bg-secondary",
     showMore: true,
-    href: "/products/activator",
+    href: "#",
   },
   {
     title: "리버셀 주사",
@@ -27,7 +31,7 @@ const products: Product[] = [
     image: "/home-product-bloodbag.png",
     imageAlt: "리버셀 주사 - 혈액 백",
     background: "bg-secondary",
-    href: "/products/revercell",
+    href: "#",
   },
   {
     title: "심해수",
@@ -35,9 +39,9 @@ const products: Product[] = [
     image: "/home-product-rewater.png",
     imageAlt: "심해수 REWATER 파우치",
     background: "bg-secondary",
-    href: "/products/rewater",
+    href: "#",
   },
-]
+];
 
 function ProductCard({ product }: { product: Product }) {
   return (
@@ -46,13 +50,21 @@ function ProductCard({ product }: { product: Product }) {
       className={`group relative flex flex-col items-center overflow-hidden ${product.background} pt-10 md:pt-14 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
     >
       {/* Hover background color overlay */}
-      <div className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"
+        aria-hidden="true"
+      />
 
       {/* top accent line */}
-      <div className="absolute left-1/2 top-0 z-10 h-1 w-20 -translate-x-1/2 bg-primary transition-all duration-300 group-hover:w-full" aria-hidden="true" />
+      <div
+        className="absolute left-1/2 top-0 z-10 h-1 w-20 -translate-x-1/2 bg-primary transition-all duration-300 group-hover:w-full"
+        aria-hidden="true"
+      />
 
       <header className="relative z-10 px-6 text-center">
-        <h3 className="text-xl font-bold text-foreground md:text-2xl transition-colors group-hover:text-primary">{product.title}</h3>
+        <h3 className="text-xl font-bold text-foreground md:text-2xl transition-colors group-hover:text-primary">
+          {product.title}
+        </h3>
         <div className="mt-4 space-y-1 text-[15px] leading-relaxed text-brand-text md:text-base">
           {product.description.map((line, idx) => (
             <p key={idx}>{line}</p>
@@ -70,24 +82,28 @@ function ProductCard({ product }: { product: Product }) {
         />
 
         {product.showMore ? (
-          <span
-            className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white bg-white/10 px-5 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-all duration-300 group-hover:bg-white group-hover:text-foreground group-hover:scale-105"
-          >
+          <span className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white bg-white/10 px-5 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-all duration-300 group-hover:bg-white group-hover:text-foreground group-hover:scale-105">
             더 보기
           </span>
         ) : null}
       </div>
     </Link>
-  )
+  );
 }
 
 export function ProductsSection() {
   return (
-    <section aria-labelledby="products-heading" className="w-full bg-background pb-14 pt-6 sm:pb-20 sm:pt-8">
+    <section
+      aria-labelledby="products-heading"
+      className="w-full bg-background pb-14 pt-6 sm:pb-20 sm:pt-8"
+    >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <div className="flex flex-col items-center gap-4 pb-12 text-center">
           <div className="flex items-center gap-3">
-            <h2 id="products-heading" className="text-2xl font-bold text-foreground md:text-[28px]">
+            <h2
+              id="products-heading"
+              className="text-2xl font-bold text-foreground md:text-[28px]"
+            >
               THEHANA R.A.C 제품 구매
             </h2>
             <Link
@@ -98,7 +114,8 @@ export function ProductsSection() {
             </Link>
           </div>
           <p className="max-w-2xl text-pretty text-[15px] leading-relaxed text-brand-text md:text-base">
-            더하나 리버스 센터에서는 의료인을 위한 전문 의료기기부터 고기능성 키트까지,
+            더하나 리버스 센터에서는 의료인을 위한 전문 의료기기부터 고기능성
+            키트까지,
             <br className="hidden md:block" />
             역노화의 전 과정을 아우르는 차별화된 솔루션을 제공합니다.
           </p>
@@ -111,5 +128,5 @@ export function ProductsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
