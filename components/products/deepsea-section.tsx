@@ -19,13 +19,13 @@ export function DeepSeaSection() {
   return (
     <section className="w-full py-10 md:py-16">
       {/* Title with green accent */}
-      <div className="px-4 md:px-20">
+      <div className="px-4 md:px-20 animate-fade-in-up">
         <h2 className="text-3xl font-semibold leading-10 text-[#3E454B] md:text-4xl">심해수</h2>
         <div className="mt-4 h-0.5 w-20 bg-[#055239]" />
       </div>
 
       {/* Centered subtitle */}
-      <div className="mt-16 flex flex-col items-center gap-8 px-4 md:mt-24">
+      <div className="mt-16 flex flex-col items-center gap-8 px-4 md:mt-24 animate-fade-in-up delay-100">
         <h3 className="text-center text-2xl font-bold leading-10 text-[#3E454B] md:text-[28px]">
           심해수 {"–"} 리워터(Re:water)
         </h3>
@@ -34,11 +34,11 @@ export function DeepSeaSection() {
 
       {/* Green headline + description */}
       <div className="mx-auto mt-10 flex max-w-[1280px] flex-col items-center gap-10 px-4 md:px-20">
-        <p className="text-pretty text-center text-xl font-medium leading-[1.6] text-[#055239] md:text-[30px]">
+        <p className="text-pretty text-center text-xl font-medium leading-[1.6] text-[#055239] md:text-[30px] animate-fade-in-up delay-200">
           해양심층 1km 청정수로 깨우는 신체 재생의 근본
         </p>
 
-        <p className="text-pretty text-center text-base leading-[1.6] text-[#3E454B] md:text-xl md:leading-[30px]">
+        <p className="text-pretty text-center text-base leading-[1.6] text-[#3E454B] md:text-xl md:leading-[30px] animate-fade-in-up delay-300">
           세계 최고 수준의 해양 1km 청정 수심에서 취수하여 불순물이 전혀 없는 순수함을 자랑합니다. 어머니의 양수와
           유사한 미네랄 밸런스를 갖춘 70여 종의 이온 미네랄이 체내에 빠르게 흡수됩니다. 신체 복구의 토대, 미네랄
           밸런스줄기세포가 손상된 세포와 조직을 회복시키기 위해서는 체액의 미네랄 밸런스가 필수적입니다. 리워터에 함유된
@@ -52,8 +52,8 @@ export function DeepSeaSection() {
 
       {/* Three product images */}
       <div className="mx-auto mt-14 grid max-w-[1280px] grid-cols-1 gap-10 px-4 sm:grid-cols-3 md:mt-20 md:px-20">
-        {products.map((product) => (
-          <div key={product.src} className="flex items-center justify-center">
+        {products.map((product, idx) => (
+          <div key={product.src} className={`flex items-center justify-center animate-fade-in-up delay-${(idx + 1) * 100}`}>
             <div className="relative aspect-[3/4] w-full max-w-[320px]">
               <Image
                 src={product.src || "/placeholder.svg"}
