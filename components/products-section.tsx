@@ -8,6 +8,7 @@ type Product = {
   imageAlt: string
   background: string
   showMore?: boolean
+  href?: string
 }
 
 const products: Product[] = [
@@ -18,6 +19,7 @@ const products: Product[] = [
     imageAlt: "혈액 활성화기 - ACT PRO PRP 활성화 장비",
     background: "bg-[#d9d9d9]",
     showMore: true,
+    href: "/products/activator",
   },
   {
     title: "리버셀 주사",
@@ -25,6 +27,7 @@ const products: Product[] = [
     image: "/home-product-bloodbag.png",
     imageAlt: "리버셀 주사 - 혈액 백",
     background: "bg-secondary",
+    href: "/products/revercell",
   },
   {
     title: "심해수",
@@ -32,19 +35,24 @@ const products: Product[] = [
     image: "/home-product-rewater.png",
     imageAlt: "심해수 REWATER 파우치",
     background: "bg-secondary",
+    href: "/products/rewater",
   },
 ]
 
 function ProductCard({ product }: { product: Product }) {
   return (
-    <article
-      className={`relative flex flex-col items-center overflow-hidden ${product.background} pt-10 md:pt-14`}
+    <Link
+      href={product.href || "#"}
+      className={`group relative flex flex-col items-center overflow-hidden ${product.background} pt-10 md:pt-14 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
     >
-      {/* top accent line */}
-      <div className="absolute left-1/2 top-0 h-1 w-20 -translate-x-1/2 bg-primary" aria-hidden="true" />
+      {/* Hover background color overlay */}
+      <div className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" aria-hidden="true" />
 
-      <header className="px-6 text-center">
-        <h3 className="text-xl font-bold text-foreground md:text-2xl">{product.title}</h3>
+      {/* top accent line */}
+      <div className="absolute left-1/2 top-0 z-10 h-1 w-20 -translate-x-1/2 bg-primary transition-all duration-300 group-hover:w-full" aria-hidden="true" />
+
+      <header className="relative z-10 px-6 text-center">
+        <h3 className="text-xl font-bold text-foreground md:text-2xl transition-colors group-hover:text-primary">{product.title}</h3>
         <div className="mt-4 space-y-1 text-[15px] leading-relaxed text-brand-text md:text-base">
           {product.description.map((line, idx) => (
             <p key={idx}>{line}</p>
@@ -52,25 +60,24 @@ function ProductCard({ product }: { product: Product }) {
         </div>
       </header>
 
-      <div className="relative mt-6 aspect-square w-full">
+      <div className="relative z-10 mt-6 aspect-square w-full">
         <Image
           src={product.image || "/placeholder.svg"}
           alt={product.imageAlt}
           fill
           sizes="(max-width: 1024px) 100vw, 33vw"
-          className="object-contain p-6"
+          className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
         />
 
         {product.showMore ? (
-          <Link
-            href="#"
-            className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white bg-white/10 px-5 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-foreground"
+          <span
+            className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white bg-white/10 px-5 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-all duration-300 group-hover:bg-white group-hover:text-foreground group-hover:scale-105"
           >
             더 보기
-          </Link>
+          </span>
         ) : null}
       </div>
-    </article>
+    </Link>
   )
 }
 
