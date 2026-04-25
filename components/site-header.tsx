@@ -36,7 +36,8 @@ export function SiteHeader() {
   }, [pathname])
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur">
+    <>
+      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-10">
         <Link href="/" aria-label="THE HANA R.A.C 홈" className="shrink-0">
           <Image
@@ -103,6 +104,7 @@ export function SiteHeader() {
           </button>
         </div>
       </div>
+      </header>
 
       {/* Mobile / Tablet drawer */}
       {open && (
@@ -192,6 +194,6 @@ export function SiteHeader() {
           </div>
         </div>
       )}
-    </header>
+    </>
   )
 }
