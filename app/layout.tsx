@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Noto_Sans_KR } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { I18nProvider } from "@/lib/i18n/context"
 import "./globals.css"
 
 const notoSansKr = Noto_Sans_KR({
@@ -25,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${notoSansKr.variable} bg-background`} suppressHydrationWarning>
       <body className="font-sans antialiased text-foreground" suppressHydrationWarning>
-        {children}
+        <I18nProvider>
+          {children}
+        </I18nProvider>
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>

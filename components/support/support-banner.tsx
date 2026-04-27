@@ -1,6 +1,11 @@
+"use client"
+
 import { ChevronDown, Mail, Phone } from "lucide-react"
+import { useI18n } from "@/lib/i18n/context"
 
 export function SupportBanner() {
+  const { t } = useI18n()
+
   return (
     <section className="relative w-full overflow-hidden">
       {/* Background image */}
@@ -16,7 +21,7 @@ export function SupportBanner() {
       <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center px-4 py-12 sm:px-6 md:py-20">
         {/* Title */}
         <h2 className="text-center text-[22px] font-bold leading-[32px] text-white sm:text-[24px] sm:leading-[40px] md:text-[30px]">
-          제품구입/AS문의
+          {t("support", "bannerTitle")}
         </h2>
 
         {/* Three selects */}
@@ -24,15 +29,15 @@ export function SupportBanner() {
           {[0, 1, 2].map((i) => (
             <div key={i} className="relative w-full sm:w-[230px] md:w-[250px]">
               <select
-                aria-label={`선택 ${i + 1}`}
+                aria-label={`${t("common", "select")} ${i + 1}`}
                 defaultValue=""
                 className="h-10 w-full appearance-none rounded-[10px] border border-[#CCCCCC] bg-white px-4 pr-10 text-[14px] font-medium leading-6 text-[#3E454B] outline-none focus:ring-2 focus:ring-primary/30 sm:px-6 sm:text-[16px]"
               >
                 <option value="" disabled>
-                  선택
+                  {t("common", "select")}
                 </option>
-                <option value="1">옵션 1</option>
-                <option value="2">옵션 2</option>
+                <option value="1">{t("support", "option1")}</option>
+                <option value="2">{t("support", "option2")}</option>
               </select>
               <ChevronDown
                 className="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#1D1B20] sm:right-4 sm:h-6 sm:w-6"
@@ -45,9 +50,9 @@ export function SupportBanner() {
         {/* Info card */}
         <div className="mt-10 flex w-full max-w-[800px] flex-col items-center justify-center gap-4 rounded-[20px] border border-[#055239] bg-[#F9F9F9] px-4 py-6 sm:flex-row sm:gap-8 sm:px-6 sm:py-10 md:mt-16 md:gap-[88px]">
           <p className="text-center text-[18px] font-medium leading-[28px] text-black sm:text-[20px] sm:leading-[34px] md:text-[24px]">
-            더하나
+            {t("support", "thehana")}
             <br />
-            리버스에이징센터
+            {t("support", "reverseAgingCenter")}
           </p>
 
           <div

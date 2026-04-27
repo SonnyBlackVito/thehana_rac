@@ -3,6 +3,7 @@
 import type React from "react"
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
+import { useI18n } from "@/lib/i18n/context"
 
 function RequiredLabel({ children, htmlFor }: { children: React.ReactNode; htmlFor?: string }) {
   return (
@@ -15,7 +16,7 @@ function RequiredLabel({ children, htmlFor }: { children: React.ReactNode; htmlF
   )
 }
 
-function SelectField({ id, label }: { id: string; label: string }) {
+function SelectField({ id, label, selectText }: { id: string; label: string; selectText: string }) {
   return (
     <div>
       <RequiredLabel htmlFor={id}>{label}</RequiredLabel>
@@ -26,10 +27,10 @@ function SelectField({ id, label }: { id: string; label: string }) {
           className="w-full appearance-none rounded-md border border-border bg-background px-4 py-3 pr-10 text-sm text-foreground/80 outline-none focus:ring-2 focus:ring-primary/30"
         >
           <option value="" disabled>
-            선택
+            {selectText}
           </option>
-          <option value="1">옵션 1</option>
-          <option value="2">옵션 2</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
         </select>
         <ChevronDown
           className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground/60"
@@ -54,53 +55,54 @@ function InputField({ id, label, type = "text" }: { id: string; label: string; t
 }
 
 export function InquiryForm() {
+  const { t } = useI18n()
   const [message, setMessage] = useState("")
   const [agreed, setAgreed] = useState(false)
 
   return (
     <section className="mx-auto max-w-[1100px] px-6 py-16 lg:px-10">
-      <h2 className="mb-10 text-center text-2xl font-bold text-foreground md:text-[28px]">문의하기</h2>
+      <h2 className="mb-10 text-center text-2xl font-bold text-foreground md:text-[28px]">{t("support", "inquiryFormTitle")}</h2>
 
       <form className="space-y-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <SelectField id="category" label="구분" />
-          <SelectField id="product" label="제품군" />
-          <InputField id="company" label="소속" />
-          <InputField id="name" label="이름" />
-          <InputField id="phone" label="연락처" type="tel" />
-          <InputField id="email" label="이메일" type="email" />
+          <SelectField id="category" label={t("support", "category")} selectText={t("common", "select")} />
+          <SelectField id="product" label={t("support", "productGroup")} selectText={t("common", "select")} />
+          <InputField id="company" label={t("support", "affiliation")} />
+          <InputField id="name" label={t("support", "name")} />
+          <InputField id="phone" label={t("support", "phone")} type="tel" />
+          <InputField id="email" label={t("support", "email")} type="email" />
         </div>
 
         <div>
-          <RequiredLabel>주소</RequiredLabel>
+          <RequiredLabel>{t("support", "address")}</RequiredLabel>
           <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-3 sm:flex-row">
               <input
-                aria-label="우편번호"
+                aria-label="Zip code"
                 className="w-full rounded-md border border-border bg-muted/40 px-4 py-3 text-sm outline-none focus:border-primary focus:bg-background focus:ring-2 focus:ring-primary/20 sm:max-w-[280px]"
               />
               <button
                 type="button"
                 className="rounded-md bg-muted-foreground/70 px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-muted-foreground"
               >
-                우편번호 검색
+                {t("support", "zipSearch")}
               </button>
             </div>
             <input
-              aria-label="주소"
-              placeholder="주소를 입력하세요."
+              aria-label="Address"
+              placeholder={t("support", "addressPlaceholder")}
               className="w-full rounded-md border border-border bg-muted/40 px-4 py-3 text-sm text-foreground/70 outline-none focus:border-primary focus:bg-background focus:ring-2 focus:ring-primary/20"
             />
             <input
-              aria-label="상세 주소"
-              placeholder="상세 주소를 입력하세요."
+              aria-label="Detail address"
+              placeholder={t("support", "addressDetailPlaceholder")}
               className="w-full rounded-md border border-border bg-muted/40 px-4 py-3 text-sm text-foreground/70 outline-none focus:border-primary focus:bg-background focus:ring-2 focus:ring-primary/20"
             />
           </div>
         </div>
 
         <div>
-          <RequiredLabel htmlFor="message">주소</RequiredLabel>
+          <RequiredLabel htmlFor="message">{t("support", "address")}</RequiredLabel>
           <textarea
             id="message"
             maxLength={500}
@@ -120,7 +122,7 @@ export function InquiryForm() {
             className="mt-0.5 h-4 w-4 rounded border-border text-primary focus:ring-primary"
           />
           <span>
-            <span className="font-medium text-foreground">개인정보 수집 및 이용약관</span>을 확인하였으며, 이에 동의합니다.
+            {t("support", "privacyConsent")}
           </span>
         </label>
 
@@ -129,13 +131,13 @@ export function InquiryForm() {
             type="submit"
             className="rounded-full border border-primary bg-background px-10 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
           >
-            확인
+            {t("support", "confirm")}
           </button>
           <button
             type="button"
             className="rounded-full border border-border bg-background px-10 py-2.5 text-sm font-medium text-foreground/70 transition-colors hover:border-foreground/40"
           >
-            취소
+            {t("support", "cancel")}
           </button>
         </div>
       </form>

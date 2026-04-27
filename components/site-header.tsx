@@ -3,20 +3,25 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
-import { Search, Menu, Globe, X } from "lucide-react"
-
-const navItems = [
-  { label: "센터소개", href: "/about" },
-  { label: "제품정보", href: "/products" },
-  { label: "연구개발", href: "/research" },
-  { label: "고객지원", href: "/support" },
-  { label: "홍보센터", href: "/press" },
-]
+import { useEffect, useState, useRef } from "react"
+import { Search, Menu, Globe, X, ChevronDown } from "lucide-react"
+import { useI18n } from "@/lib/i18n/context"
+import type { Locale } from "@/lib/i18n/translations"
 
 export function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
+  const langRef = useRef<HTMLDivElement>(null)
+  const { locale, setLocale, t } = useI18n()
+
+  const navItems = [
+    { label: t("nav", "about"), href: "/about" },
+    { label: t("nav", "products"), href: "/products" },
+    { label: t("nav", "research"), href: "/research" },
+    { label: t("nav", "support"), href: "/support" },
+    { label: t("nav", "press"), href: "/press" },
+  ]
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -35,6 +40,22 @@ export function SiteHeader() {
     setOpen(false)
   }, [pathname])
 
+  // Close language dropdown on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClick)
+    return () => document.removeEventListener("mousedown", handleClick)
+  }, [])
+
+  function handleLangChange(newLocale: Locale) {
+    setLocale(newLocale)
+    setLangOpen(false)
+  }
+
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur">
@@ -50,12 +71,12 @@ export function SiteHeader() {
           />
         </Link>
 
-        <nav aria-label="주 메뉴" className="hidden lg:block">
+        <nav aria-label={t("nav", "mainMenu")} className="hidden lg:block">
           <ul className="flex items-center gap-6 xl:gap-10">
             {navItems.map((item) => {
               const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
               return (
-                <li key={item.label}>
+                <li key={item.href}>
                   <Link
                     href={item.href}
                     aria-current={isActive ? "page" : undefined}
@@ -80,21 +101,73 @@ export function SiteHeader() {
         <div className="flex items-center gap-3 sm:gap-5">
           <button
             type="button"
-            aria-label="검색"
+            aria-label={t("nav", "search")}
             className="hidden text-foreground/80 transition-colors hover:text-primary sm:inline-flex"
           >
             <Search className="h-5 w-5" strokeWidth={1.5} />
           </button>
+
+          {/* Language Switcher */}
+          <div ref={langRef} className="relative hidden sm:block">
+            <button
+              type="button"
+              id="lang-switcher"
+              aria-label={t("nav", "language")}
+              aria-expanded={langOpen}
+              aria-haspopup="listbox"
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-[13px] font-medium text-foreground/80 transition-all hover:border-primary hover:text-primary"
+            >
+              <Globe className="h-4 w-4" strokeWidth={1.5} />
+              <span>{locale === "ko" ? "KR" : "EN"}</span>
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
+                strokeWidth={2}
+              />
+            </button>
+
+            {/* Dropdown */}
+            {langOpen && (
+              <div
+                role="listbox"
+                aria-labelledby="lang-switcher"
+                className="absolute right-0 top-full z-50 mt-2 w-[120px] overflow-hidden rounded-lg border border-border bg-background shadow-lg animate-in fade-in slide-in-from-top-2 duration-200"
+              >
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={locale === "ko"}
+                  onClick={() => handleLangChange("ko")}
+                  className={`flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors ${
+                    locale === "ko"
+                      ? "bg-primary/10 font-semibold text-primary"
+                      : "text-foreground/80 hover:bg-muted/60"
+                  }`}
+                >
+                  <span className="text-base">🇰🇷</span>
+                  <span>KR</span>
+                </button>
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={locale === "en"}
+                  onClick={() => handleLangChange("en")}
+                  className={`flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors ${
+                    locale === "en"
+                      ? "bg-primary/10 font-semibold text-primary"
+                      : "text-foreground/80 hover:bg-muted/60"
+                  }`}
+                >
+                  <span className="text-base">🇺🇸</span>
+                  <span>EN</span>
+                </button>
+              </div>
+            )}
+          </div>
+
           <button
             type="button"
-            aria-label="언어 변경"
-            className="hidden text-foreground/80 transition-colors hover:text-primary sm:inline-flex"
-          >
-            <Globe className="h-5 w-5" strokeWidth={1.5} />
-          </button>
-          <button
-            type="button"
-            aria-label="전체 메뉴 열기"
+            aria-label={t("nav", "openMenu")}
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen(true)}
@@ -112,13 +185,13 @@ export function SiteHeader() {
           id="mobile-menu"
           role="dialog"
           aria-modal="true"
-          aria-label="모바일 메뉴"
+          aria-label={t("nav", "mobileMenu")}
           className="fixed inset-0 z-[60] lg:hidden"
         >
           {/* Backdrop */}
           <button
             type="button"
-            aria-label="메뉴 닫기"
+            aria-label={t("nav", "closeMenu")}
             onClick={() => setOpen(false)}
             className="absolute inset-0 bg-foreground/40 backdrop-blur-sm"
           />
@@ -135,7 +208,7 @@ export function SiteHeader() {
               />
               <button
                 type="button"
-                aria-label="메뉴 닫기"
+                aria-label={t("nav", "closeMenu")}
                 onClick={() => setOpen(false)}
                 className="text-foreground/80 transition-colors hover:text-primary"
               >
@@ -143,13 +216,13 @@ export function SiteHeader() {
               </button>
             </div>
 
-            <nav aria-label="모바일 주 메뉴" className="flex-1 overflow-y-auto py-2">
+            <nav aria-label={t("nav", "mobileMainMenu")} className="flex-1 overflow-y-auto py-2">
               <ul className="flex flex-col">
                 {navItems.map((item) => {
                   const isActive =
                     pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
                   return (
-                    <li key={item.label}>
+                    <li key={item.href}>
                       <Link
                         href={item.href}
                         aria-current={isActive ? "page" : undefined}
@@ -176,20 +249,40 @@ export function SiteHeader() {
             <div className="flex items-center justify-around border-t border-border px-6 py-4 sm:hidden">
               <button
                 type="button"
-                aria-label="검색"
+                aria-label={t("nav", "search")}
                 className="flex flex-col items-center gap-1 text-xs text-foreground/70 transition-colors hover:text-primary"
               >
                 <Search className="h-5 w-5" strokeWidth={1.5} />
-                <span>검색</span>
+                <span>{t("nav", "search")}</span>
               </button>
-              <button
-                type="button"
-                aria-label="언어 변경"
-                className="flex flex-col items-center gap-1 text-xs text-foreground/70 transition-colors hover:text-primary"
-              >
-                <Globe className="h-5 w-5" strokeWidth={1.5} />
-                <span>언어</span>
-              </button>
+
+              {/* Mobile language switcher */}
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => handleLangChange("ko")}
+                  className={`flex flex-col items-center gap-1 rounded-md px-3 py-1.5 text-xs transition-colors ${
+                    locale === "ko"
+                      ? "bg-primary/10 font-semibold text-primary"
+                      : "text-foreground/70 hover:text-primary"
+                  }`}
+                >
+                  <span className="text-lg">🇰🇷</span>
+                  <span>KR</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleLangChange("en")}
+                  className={`flex flex-col items-center gap-1 rounded-md px-3 py-1.5 text-xs transition-colors ${
+                    locale === "en"
+                      ? "bg-primary/10 font-semibold text-primary"
+                      : "text-foreground/70 hover:text-primary"
+                  }`}
+                >
+                  <span className="text-lg">🇺🇸</span>
+                  <span>EN</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

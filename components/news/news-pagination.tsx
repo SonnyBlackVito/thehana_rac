@@ -2,9 +2,11 @@
 
 import { useState } from "react"
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react"
+import { useI18n } from "@/lib/i18n/context"
 
 export function NewsPagination({ totalPages = 5 }: { totalPages?: number }) {
   const [page, setPage] = useState(1)
+  const { t } = useI18n()
 
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1)
 
@@ -14,7 +16,7 @@ export function NewsPagination({ totalPages = 5 }: { totalPages?: number }) {
 
   return (
     <nav
-      aria-label="페이지 네비게이션"
+      aria-label="Pagination"
       className="flex items-center justify-center gap-2 py-10"
     >
       <button
@@ -22,7 +24,7 @@ export function NewsPagination({ totalPages = 5 }: { totalPages?: number }) {
         onClick={() => setPage(1)}
         disabled={page === 1}
         className={navBtn}
-        aria-label="첫 페이지"
+        aria-label={t("press", "firstPage")}
       >
         <ChevronsLeft className="h-4 w-4" />
       </button>
@@ -31,7 +33,7 @@ export function NewsPagination({ totalPages = 5 }: { totalPages?: number }) {
         onClick={() => setPage((p) => Math.max(1, p - 1))}
         disabled={page === 1}
         className={navBtn}
-        aria-label="이전 페이지"
+        aria-label={t("press", "prevPage")}
       >
         <ChevronLeft className="h-4 w-4" />
       </button>
@@ -60,7 +62,7 @@ export function NewsPagination({ totalPages = 5 }: { totalPages?: number }) {
         onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
         disabled={page === totalPages}
         className={navBtn}
-        aria-label="다음 페이지"
+        aria-label={t("press", "nextPage")}
       >
         <ChevronRight className="h-4 w-4" />
       </button>
@@ -69,7 +71,7 @@ export function NewsPagination({ totalPages = 5 }: { totalPages?: number }) {
         onClick={() => setPage(totalPages)}
         disabled={page === totalPages}
         className={navBtn}
-        aria-label="마지막 페이지"
+        aria-label={t("press", "lastPage")}
       >
         <ChevronsRight className="h-4 w-4" />
       </button>

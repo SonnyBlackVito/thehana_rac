@@ -1,37 +1,36 @@
+"use client"
+
 import Link from "next/link"
 import { Youtube, Instagram, Store } from "lucide-react"
-
-const branches = [
-  { label: "인바디 본사", address: "06106 서울시 강남구 언주로 625 인바디빌딩" },
-  { label: "인바디 공장", address: "31025 충청남도 천안시 서북구 입장면 흑암길 15" },
-  { label: "인바디 벤처센터", address: "06313 서울시 강남구 논현로2길 54 인바디벤처센터" },
-  { label: "인바디 양재센터", address: "06779 서울특별시 서초구 동산로 1 5층 인바디양재센터" },
-  { label: "인바디 2공장", address: "31026 충청남도 천안시 서북구 입장면 연곡길 330" },
-]
-
-function FooterWordmark() {
-  return (
-    <div className="flex flex-col leading-none text-background">
-      <span className="font-serif text-[22px] font-light tracking-[0.08em]">THE HANA</span>
-      <span className="font-serif text-[22px] font-light tracking-[0.28em]">R.A.C</span>
-    </div>
-  )
-}
+import { useI18n } from "@/lib/i18n/context"
 
 export function SiteFooter() {
+  const { locale, t } = useI18n()
+
+  const branches = [
+    { label: locale === "ko" ? "인바디 본사" : "HQ", address: "06106 서울시 강남구 언주로 625 인바디빌딩" },
+    { label: locale === "ko" ? "인바디 공장" : "Factory", address: "31025 충청남도 천안시 서북구 입장면 흑암길 15" },
+    { label: locale === "ko" ? "인바디 벤처센터" : "Venture Center", address: "06313 서울시 강남구 논현로2길 54 인바디벤처센터" },
+    { label: locale === "ko" ? "인바디 양재센터" : "Yangjae Center", address: "06779 서울특별시 서초구 동산로 1 5층 인바디양재센터" },
+    { label: locale === "ko" ? "인바디 2공장" : "Factory 2", address: "31026 충청남도 천안시 서북구 입장면 연곡길 330" },
+  ]
+
   return (
     <footer className="w-full bg-brand-footer text-background">
       <div className="mx-auto max-w-[1400px] px-4 py-10 sm:px-6 sm:py-12 lg:px-10 lg:py-14">
         <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
           {/* Left column: logo + company info */}
           <div>
-            <FooterWordmark />
+            <div className="flex flex-col leading-none text-background">
+              <span className="font-serif text-[22px] font-light tracking-[0.08em]">THE HANA</span>
+              <span className="font-serif text-[22px] font-light tracking-[0.28em]">R.A.C</span>
+            </div>
 
             <div className="mt-6 space-y-2 text-[13px] leading-relaxed text-background/80 sm:mt-10 sm:space-y-3 sm:text-sm">
-              <p className="text-[14px] font-semibold text-background sm:text-[15px]">㈜세일즈코어</p>
+              <p className="text-[14px] font-semibold text-background sm:text-[15px]">{t("footer", "company")}</p>
               <p className="flex flex-wrap gap-x-4 gap-y-1">
-                <span>대표이사 : 한재선</span>
-                <span>사업자등록번호 : 361-81-00506</span>
+                <span>{t("footer", "ceo")}</span>
+                <span>{t("footer", "businessNo")}</span>
               </p>
               <p>TEL : 010-8190-1627</p>
             </div>
@@ -60,29 +59,29 @@ export function SiteFooter() {
               href="#"
               className="text-[13px] text-background hover:text-primary-foreground sm:text-sm"
             >
-              개인정보처리방침
+              {t("footer", "privacy")}
             </Link>
             <Link
               href="#"
               className="text-[13px] text-background/80 hover:text-background sm:text-sm"
             >
-              이메일무단수집거부
+              {t("footer", "emailReject")}
             </Link>
           </div>
 
           <nav
-            aria-label="소셜 및 스토어 링크"
+            aria-label="Social & Store links"
             className="flex flex-wrap items-center gap-3 sm:gap-4"
           >
             <Link
               href="#"
-              aria-label="인바디스토어"
+              aria-label={t("footer", "store")}
               className="flex items-center gap-2 rounded-full bg-background px-3 py-1.5 text-xs font-medium text-foreground transition-opacity hover:opacity-90"
             >
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 <Store className="h-3.5 w-3.5" strokeWidth={2} />
               </span>
-              <span>인바디스토어</span>
+              <span>{t("footer", "store")}</span>
             </Link>
             <Link
               href="#"

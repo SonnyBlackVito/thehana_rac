@@ -1,26 +1,17 @@
+"use client"
+
 import Image from "next/image";
-
-type Product = {
-  name: string;
-  image: string;
-  alt: string;
-};
-
-const products: Product[] = [
-  { name: "혈액활성화기", image: "/grid-activator.png", alt: "혈액활성화기" },
-  {
-    name: "혈액활성화기 MINI",
-    image: "/grid-activator-mini.png",
-    alt: "혈액활성화기 MINI",
-  },
-  {
-    name: "혈액 분리 장치",
-    image: "/grid-blood-separator.png",
-    alt: "혈액 분리 장치",
-  },
-];
+import { useI18n } from "@/lib/i18n/context";
 
 export function ProductGrid() {
+  const { t } = useI18n();
+
+  const products = [
+    { name: t("products", "gridActivator"), image: "/grid-activator.png", alt: "Blood Activator" },
+    { name: t("products", "gridMini"), image: "/grid-activator-mini.png", alt: "Blood Activator MINI" },
+    { name: t("products", "gridSeparator"), image: "/grid-blood-separator.png", alt: "Blood Separator" },
+  ];
+
   return (
     <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
