@@ -21,7 +21,7 @@ export function ProductsSection() {
           : "Blood Activator - ACT PRO PRP Activation Device",
       background: "bg-secondary",
       showMore: true,
-      href: "#",
+      href: "/products/activator",
     },
     {
       title: t("productsSection", "revercellTitle"),
@@ -32,7 +32,7 @@ export function ProductsSection() {
       image: "/home-product-bloodbag.png",
       imageAlt: locale === "ko" ? "리버셀 주사 - 혈액 백" : "Revercell Injection - Blood Bag",
       background: "bg-secondary",
-      href: "#",
+      href: "/products/revercell",
     },
     {
       title: t("productsSection", "deepseaTitle"),
@@ -43,7 +43,7 @@ export function ProductsSection() {
       image: "/home-product-rewater.png",
       imageAlt: locale === "ko" ? "심해수 REWATER 파우치" : "Deep Sea Water REWATER Pouch",
       background: "bg-secondary",
-      href: "#",
+      href: "/products/deepsea",
     },
   ];
 
@@ -62,7 +62,7 @@ export function ProductsSection() {
               {t("productsSection", "heading")}
             </h2>
             <Link
-              href="#"
+              href="/products"
               className="inline-flex items-center justify-center rounded-full border border-border px-4 py-1.5 text-xs font-medium text-foreground/80 transition-colors hover:border-primary hover:text-primary"
             >
               {t("productsSection", "more")}

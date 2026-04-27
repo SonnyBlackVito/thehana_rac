@@ -13,7 +13,7 @@ export function DeepSeaSection() {
   ]
 
   return (
-    <section className="w-full py-10 md:py-16">
+    <section id="deepsea" className="w-full py-10 md:py-16">
       {/* Title with green accent */}
       <div className="px-4 md:px-20 animate-fade-in-up">
         <h2 className="text-3xl font-semibold leading-10 text-[#3E454B] md:text-4xl">{t("products", "deepseaSectionTitle")}</h2>

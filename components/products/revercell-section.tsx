@@ -8,6 +8,7 @@ export function RevercellSection() {
 
   return (
     <section
+      id="revercell"
       aria-labelledby="revercell-title"
       className="relative w-full overflow-hidden"
     >
