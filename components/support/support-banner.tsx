@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { ChevronDown, Mail, Phone } from "lucide-react"
-import { useI18n } from "@/lib/i18n/context"
+import { ChevronDown, Mail, Phone } from "lucide-react";
+import { useI18n } from "@/lib/i18n/context";
 
 export function SupportBanner() {
-  const { t } = useI18n()
+  const { t } = useI18n();
 
   return (
     <section className="relative w-full overflow-hidden">
@@ -66,16 +66,22 @@ export function SupportBanner() {
 
           <div className="flex flex-col gap-2">
             <p className="flex items-center gap-2 text-[13px] leading-6 text-black sm:text-[14px] md:text-[16px]">
-              <Mail className="h-5 w-5 shrink-0 text-black sm:h-6 sm:w-6" strokeWidth={2} />
-              <span className="break-all">globatlthehana@gmail.com</span>
+              <Mail
+                className="h-5 w-5 shrink-0 text-black sm:h-6 sm:w-6"
+                strokeWidth={2}
+              />
+              <span className="break-all">globalthehana@gmail.com</span>
             </p>
             <p className="flex items-center gap-2 text-[13px] leading-6 text-black sm:text-[14px] md:text-[16px]">
-              <Phone className="h-5 w-5 shrink-0 text-black sm:h-6 sm:w-6" strokeWidth={2} />
+              <Phone
+                className="h-5 w-5 shrink-0 text-black sm:h-6 sm:w-6"
+                strokeWidth={2}
+              />
               <span>010-8190-1627</span>
             </p>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
