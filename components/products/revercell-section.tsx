@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useI18n } from "@/lib/i18n/context"
 
 export function RevercellSection() {
@@ -10,7 +11,7 @@ export function RevercellSection() {
     <section
       id="revercell"
       aria-labelledby="revercell-title"
-      className="relative w-full overflow-hidden"
+      className="relative w-full scroll-mt-24 overflow-hidden"
     >
       {/* Background image with 50% white overlay to match Figma */}
       <div className="absolute inset-0 -z-10">
@@ -53,24 +54,40 @@ export function RevercellSection() {
 
         {/* Two treatment photos side by side */}
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 md:mt-16 md:gap-8">
-          <div className="relative aspect-[3/4] w-full overflow-hidden animate-fade-in-up delay-500">
+          <Link
+            href="/products/revercell"
+            aria-label="Revercell IV drip treatment details"
+            className="group relative block aspect-[3/4] w-full overflow-hidden animate-fade-in-up delay-500 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+          >
             <Image
               src="/revercell-iv-drip.png"
               alt="Revercell IV drip treatment"
               fill
               sizes="(min-width: 640px) 50vw, 100vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-          </div>
-          <div className="relative aspect-[3/4] w-full overflow-hidden animate-fade-in-up delay-500">
+            <div
+              className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              aria-hidden="true"
+            />
+          </Link>
+          <Link
+            href="/products/revercell"
+            aria-label="Revercell face injection treatment details"
+            className="group relative block aspect-[3/4] w-full overflow-hidden animate-fade-in-up delay-500 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+          >
             <Image
               src="/revercell-face-injection.png"
               alt="Revercell face injection treatment"
               fill
               sizes="(min-width: 640px) 50vw, 100vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-          </div>
+            <div
+              className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              aria-hidden="true"
+            />
+          </Link>
         </div>
       </div>
     </section>
