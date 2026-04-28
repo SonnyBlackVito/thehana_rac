@@ -1,4 +1,4 @@
-export type Locale = "ko" | "en"
+export type Locale = "ko" | "en";
 
 export const translations = {
   // ── Header Navigation ──
@@ -19,13 +19,22 @@ export const translations = {
 
   // ── Home – Hero ──
   hero: {
-    eyebrow: { ko: "더하나 리버스 에이징 센터", en: "THE HANA Reverse Aging Center" },
-    headingLine1: { ko: "단 15분의 활성화", en: "Just 15 Minutes of Activation" },
+    eyebrow: {
+      ko: "더하나 리버스 에이징 센터",
+      en: "THE HANA Reverse Aging Center",
+    },
+    headingLine1: {
+      ko: "단 15분의 활성화",
+      en: "Just 15 Minutes of Activation",
+    },
     headingLine2: {
       ko: "당신의 혈액 속에 잠든 재생 에너지를 깨웁니다",
       en: "Awakens the regenerative energy dormant in your blood",
     },
-    descLine1: { ko: "첨단 재생 과학 솔루션을 기반으로", en: "Based on advanced regenerative science solutions" },
+    descLine1: {
+      ko: "첨단 재생 과학 솔루션을 기반으로",
+      en: "Based on advanced regenerative science solutions",
+    },
     descLine2: {
       ko: "역노화를 실현하는 프리미엄 리버스 에이징 센터",
       en: "A premium reverse aging center realizing anti-aging",
@@ -34,10 +43,16 @@ export const translations = {
 
   // ── Home – News & Social ──
   newsSocial: {
-    srHeading: { ko: "최신 뉴스 및 소셜 미디어", en: "Latest News & Social Media" },
+    srHeading: {
+      ko: "최신 뉴스 및 소셜 미디어",
+      en: "Latest News & Social Media",
+    },
     latestNews: { ko: "최신뉴스", en: "Latest News" },
     socialMedia: { ko: "소셜미디어", en: "Social Media" },
     more: { ko: "더 보기", en: "See More" },
+    categoryPress: { ko: "보도자료", en: "PRESS" },
+    categoryEvent: { ko: "이벤트", en: "EVENT" },
+    categoryResearch: { ko: "연구", en: "RESEARCH" },
   },
 
   // ── Home – Products Section ──
@@ -50,8 +65,16 @@ export const translations = {
     },
     activatorTitle: { ko: "혈액 활성화기", en: "Blood Activator" },
     activatorDesc: {
-      ko: ["화학 첨가물 없이, 오직", "내 혈액으로 완성하는", "자가 치유의 혁신"],
-      en: ["Without chemical additives,", "completed only with my blood,", "innovation in self-healing"],
+      ko: [
+        "화학 첨가물 없이, 오직",
+        "내 혈액으로 완성하는",
+        "자가 치유의 혁신",
+      ],
+      en: [
+        "Without chemical additives,",
+        "completed only with my blood,",
+        "innovation in self-healing",
+      ],
     },
     revercellTitle: { ko: "리버셀 주사", en: "Revercell Injection" },
     revercellDesc: {
@@ -67,10 +90,16 @@ export const translations = {
 
   // ── Home – FAQ & Contact ──
   faqContact: {
-    srHeading: { ko: "자주 찾는 질문 및 고객 지원", en: "FAQ & Customer Support" },
+    srHeading: {
+      ko: "자주 찾는 질문 및 고객 지원",
+      en: "FAQ & Customer Support",
+    },
     faqTitle: { ko: "자주 찾는 질문", en: "Frequently Asked Questions" },
     more: { ko: "더 보기", en: "See More" },
-    faqSubtitle: { ko: "문의 하시기 전 궁금하신 사항을 확인하세요.", en: "Check your questions before contacting us." },
+    faqSubtitle: {
+      ko: "문의 하시기 전 궁금하신 사항을 확인하세요.",
+      en: "Check your questions before contacting us.",
+    },
     tabs: {
       activator: { ko: "혈액 활성화기", en: "Blood Activator" },
       revercell: { ko: "리버셀 주사", en: "Revercell" },
@@ -85,15 +114,24 @@ export const translations = {
     weekday: { ko: "평일 :", en: "Weekdays:" },
     weekdayHours: { ko: "09:30 - 17:30", en: "09:30 - 17:30" },
     lunch: { ko: "점심 :", en: "Lunch:" },
-    lunchHours: { ko: "12:00 ~ 13:00 (전화 상담 불가)", en: "12:00 ~ 13:00 (No phone consultation)" },
-    holiday: { ko: "* 주말 및 공휴일 휴무", en: "* Closed on weekends and holidays" },
+    lunchHours: {
+      ko: "12:00 ~ 13:00 (전화 상담 불가)",
+      en: "12:00 ~ 13:00 (No phone consultation)",
+    },
+    holiday: {
+      ko: "* 주말 및 공휴일 휴무",
+      en: "* Closed on weekends and holidays",
+    },
   },
 
   // ── Footer ──
   footer: {
     company: { ko: "㈜세일즈코어", en: "Salescore Co., Ltd." },
     ceo: { ko: "대표이사 : 한재선", en: "CEO: Jaeseon Han" },
-    businessNo: { ko: "사업자등록번호 : 361-81-00506", en: "Business No.: 361-81-00506" },
+    businessNo: {
+      ko: "사업자등록번호 : 361-81-00506",
+      en: "Business No.: 361-81-00506",
+    },
     privacy: { ko: "개인정보처리방침", en: "Privacy Policy" },
     emailReject: { ko: "이메일무단수집거부", en: "Anti-Spam Policy" },
     store: { ko: "인바디스토어", en: "InBody Store" },
@@ -108,7 +146,10 @@ export const translations = {
 
   // ── About Page ──
   about: {
-    pageTitle: { ko: "더하나 리버스 에이징 센터 소개", en: "About THE HANA Reverse Aging Center" },
+    pageTitle: {
+      ko: "더하나 리버스 에이징 센터 소개",
+      en: "About THE HANA Reverse Aging Center",
+    },
     introHeading: {
       ko: "Worldwide Leader in Reverse Aging Technology",
       en: "Worldwide Leader in Reverse Aging Technology",
@@ -147,7 +188,10 @@ export const translations = {
   products: {
     pageTitle: { ko: "혈액 활성화기", en: "Blood Activator" },
     introTitle: { ko: "혈액 활성화기", en: "Blood Activator" },
-    introSubtitle: { ko: "세계 혈구세포 활성화 시장의 새로운 표준", en: "A New Standard in the Global Blood Cell Activation Market" },
+    introSubtitle: {
+      ko: "세계 혈구세포 활성화 시장의 새로운 표준",
+      en: "A New Standard in the Global Blood Cell Activation Market",
+    },
     introDesc: {
       ko: "정밀한 혈액 관리 기술이 부재했던 시대에, 독보적인 정밀도와 재현도를 보장하는 혈구세포 활성화 기술을 통해 처음으로 혈액 활성화기를 선보였습니다. 우리는 산업의 패러다임과 대중의 인식을 변화시키며, 가장 실용적이고 과학적인 역노화 케어 브랜드로 자리매김하였습니다. 메디컬, 영양, 피트니스, 재활 등 각 전문 분야에서 신뢰의 상징이 된 우리의 기술은 이미 시장을 '혈액 활성화기'와 '그렇지 않은 것'으로 구분 짓는 기준이 되었습니다. 이제 우리는 전문 센터를 넘어 일상 속 어디서나 혈액 건강을 관리할 수 있는 건강한 생활의 필수품으로 그 영역을 확장하고 있습니다.",
       en: "In an era when precise blood management technology was absent, we introduced the first blood activator through blood cell activation technology that guarantees unparalleled precision and reproducibility. We have changed the industry paradigm and public perception, establishing ourselves as the most practical and scientific anti-aging care brand. Our technology, which has become a symbol of trust in each specialized field such as medical, nutrition, fitness, and rehabilitation, has already become the standard that divides the market into 'blood activators' and 'everything else'. Now we are expanding our territory beyond specialized centers to become an essential part of healthy living that can manage blood health anywhere in daily life.",
@@ -156,15 +200,27 @@ export const translations = {
     gridMini: { ko: "혈액활성화기 MINI", en: "Blood Activator MINI" },
     gridSeparator: { ko: "혈액 분리 장치", en: "Blood Separator" },
     revercellSectionTitle: { ko: "리버셀 주사", en: "Revercell Injection" },
-    revercellSubtitle: { ko: "리버셀 주사 (Revercell)", en: "Revercell Injection" },
-    revercellMechanism: { ko: "줄기세포의 재생 및 분화 메커니즘", en: "Stem Cell Regeneration & Differentiation Mechanism" },
+    revercellSubtitle: {
+      ko: "리버셀 주사 (Revercell)",
+      en: "Revercell Injection",
+    },
+    revercellMechanism: {
+      ko: "줄기세포의 재생 및 분화 메커니즘",
+      en: "Stem Cell Regeneration & Differentiation Mechanism",
+    },
     revercellDesc: {
       ko: "신체 복구의 핵심, 재생 에너지 줄기세포는 인체 내 손상된 세포와 조직을 원래의 기능으로 회복시키는 강력한 재생 세포입니다. 신체를 구성하는 다양한 조직으로 분화하는 특성과 무한히 복제되는 자가 증식 능력을 통해 근본적인 치유를 이끌어냅니다. 혈관 신생과 전신 순환 리버셀의 활성화 기술과 결합된 줄기세포를 정맥으로 투여하면, 혈관을 타고 전신을 순환하며 재생이 시급한 곳에 집중적으로 타겟팅됩니다. 특히 혈액 공급이 원활하지 않은 부위에 새로운 혈관을 신생하여 심혈관계 및 미세혈관 합병증 증세를 획기적으로 완화하고 신체 전반의 활력을 되찾아줍니다.",
       en: "The core of body repair, regenerative energy stem cells are powerful regenerative cells that restore damaged cells and tissues in the human body to their original function. Through the characteristic of differentiating into various tissues that make up the body and the ability to self-replicate infinitely, they lead to fundamental healing. When stem cells combined with Revercell's activation technology are administered intravenously, they circulate throughout the body via blood vessels and are intensively targeted where regeneration is urgent. In particular, new blood vessels are created in areas where blood supply is not smooth, dramatically alleviating cardiovascular and microvascular complication symptoms and restoring vitality throughout the body.",
     },
     deepseaSectionTitle: { ko: "심해수", en: "Deep Sea Water" },
-    deepseaSubtitle: { ko: "심해수 – 리워터(Re:water)", en: "Deep Sea Water – Re:water" },
-    deepseaGreenHeadline: { ko: "해양심층 1km 청정수로 깨우는 신체 재생의 근본", en: "The Foundation of Body Regeneration Awakened by 1km Deep Ocean Clean Water" },
+    deepseaSubtitle: {
+      ko: "심해수 – 리워터(Re:water)",
+      en: "Deep Sea Water – Re:water",
+    },
+    deepseaGreenHeadline: {
+      ko: "해양심층 1km 청정수로 깨우는 신체 재생의 근본",
+      en: "The Foundation of Body Regeneration Awakened by 1km Deep Ocean Clean Water",
+    },
     deepseaDesc: {
       ko: "세계 최고 수준의 해양 1km 청정 수심에서 취수하여 불순물이 전혀 없는 순수함을 자랑합니다. 어머니의 양수와 유사한 미네랄 밸런스를 갖춘 70여 종의 이온 미네랄이 체내에 빠르게 흡수됩니다. 신체 복구의 토대, 미네랄 밸런스줄기세포가 손상된 세포와 조직을 회복시키기 위해서는 체액의 미네랄 밸런스가 필수적입니다. 리워터에 함유된 고농도의 마그네슘(50~71mg/L)과 칼슘(16~25mg/L) 은 줄기세포가 신체 각 조직으로 분화하고 자가 증식하는 과정에서 핵심적인 촉매제 역할을 하며 근본적인 재생을 지원합니다. 리버셀의 활성화 기술로 투여된 줄기세포가 혈관을 타고 전신에 도달하기 위해서는 혈액의 점도와 순환 능력이 중요합니다. 리워터는 원활한 신진대사와 혈행 밸런스 케어를 통해 새로운 혈관이 신생되는 과정을 돕습니다. 특히 미세혈관까지 도달하는 수분 공급 능력을 통해 심혈관계 합병증 완화와 전신 활력 증진에 기여합니다.",
       en: "Drawing water from the world's highest level of ocean clean depths at 1km, it boasts purity with absolutely no impurities. Over 70 types of ionic minerals with a mineral balance similar to mother's amniotic fluid are rapidly absorbed into the body. The foundation of body repair requires mineral balance for stem cells to restore damaged cells and tissues. The high-concentration magnesium (50-71mg/L) and calcium (16-25mg/L) contained in Re:water play a crucial catalyst role in the process of stem cell differentiation into various body tissues and self-proliferation, supporting fundamental regeneration. For stem cells administered through Revercell's activation technology to reach the entire body through blood vessels, blood viscosity and circulation ability are important. Re:water helps the process of new blood vessel creation through smooth metabolism and blood circulation balance care. In particular, through its ability to deliver moisture to even microvessels, it contributes to alleviating cardiovascular complications and enhancing overall vitality.",
@@ -193,35 +249,160 @@ export const translations = {
     },
     comparisonVs: { ko: "VS", en: "VS" },
     comparisonPrp: { ko: "일반 PRP", en: "General PRP" },
-    comparisonActive: { ko: "활성 PRP / PRF 비교", en: "Active PRP / PRF Comparison" },
+    comparisonActive: {
+      ko: "활성 PRP / PRF 비교",
+      en: "Active PRP / PRF Comparison",
+    },
     imageCards: {
-      plateletIllustrationAlt: { ko: "비활성 혈소판과 활성 혈소판의 가상 일러스트", en: "Virtual illustration of inactive and active platelets" },
-      plateletIllustrationLabel: { ko: "비활성 혈소판 & 활성 혈소판(가상도)", en: "Inactive & Active Platelets (Virtual)" },
-      plateletSemAlt: { ko: "전자현미경으로 촬영한 비활성 및 활성 혈소판", en: "Inactive and active platelets photographed by electron microscope" },
-      plateletSemLabel: { ko: "비활성 혈소판 & 활성 혈소판(전자현미경)", en: "Inactive & Active Platelets (SEM)" },
-      leukocyteSemAlt: { ko: "전자현미경으로 촬영한 비활성 및 활성 백혈구", en: "Inactive and active leukocytes photographed by electron microscope" },
-      leukocyteSemLabel: { ko: "비활성 백혈구 & 활성 백혈구(전자현미경)", en: "Inactive & Active Leukocytes (SEM)" },
+      plateletIllustrationAlt: {
+        ko: "비활성 혈소판과 활성 혈소판의 가상 일러스트",
+        en: "Virtual illustration of inactive and active platelets",
+      },
+      plateletIllustrationLabel: {
+        ko: "비활성 혈소판 & 활성 혈소판(가상도)",
+        en: "Inactive & Active Platelets (Virtual)",
+      },
+      plateletSemAlt: {
+        ko: "전자현미경으로 촬영한 비활성 및 활성 혈소판",
+        en: "Inactive and active platelets photographed by electron microscope",
+      },
+      plateletSemLabel: {
+        ko: "비활성 혈소판 & 활성 혈소판(전자현미경)",
+        en: "Inactive & Active Platelets (SEM)",
+      },
+      leukocyteSemAlt: {
+        ko: "전자현미경으로 촬영한 비활성 및 활성 백혈구",
+        en: "Inactive and active leukocytes photographed by electron microscope",
+      },
+      leukocyteSemLabel: {
+        ko: "비활성 백혈구 & 활성 백혈구(전자현미경)",
+        en: "Inactive & Active Leukocytes (SEM)",
+      },
     },
     tableHeaders: {
       item: { ko: "항목", en: "Item" },
       prp: { ko: "PRP", en: "PRP" },
       activePrp: { ko: "활성 PRP 정맥 주사", en: "Active PRP IV Injection" },
-      activePrf: { ko: "활성 PRF 섬유소 치료", en: "Active PRF Fibrin Treatment" },
+      activePrf: {
+        ko: "활성 PRF 섬유소 치료",
+        en: "Active PRF Fibrin Treatment",
+      },
     },
     tableRows: {
-      volume: { label: { ko: "채혈량", en: "Blood Volume" }, prp: { ko: "10~30cc", en: "10~30cc" }, activePrp: { ko: "10~30cc", en: "10~30cc" }, activePrf: { ko: "10~30cc", en: "10~30cc" } },
-      extraction: { label: { ko: "PRP 추출량", en: "PRP Extraction Volume" }, prp: { ko: "1~3cc", en: "1~3cc" }, activePrp: { ko: "15cc", en: "15cc" }, activePrf: { ko: "15cc", en: "15cc" } },
-      anticoagulant: { label: { ko: "항응고제", en: "Anticoagulant" }, prp: { ko: "필요", en: "Required" }, activePrp: { ko: "필요", en: "Required" }, activePrf: { ko: "필요 없음", en: "Not Required" } },
-      activation: { label: { ko: "활성화 방법", en: "Activation Method" }, prp: { ko: "자연 응고(비방상), 화학적 활성화 방식\n-> CaCl₂, 트롬빈", en: "Natural coagulation, Chemical activation\n-> CaCl₂, Thrombin" }, activePrp: { ko: "물리직인 스트레스 활성화 방식\n-> Microtubule", en: "Physical stress activation\n-> Microtubule" }, activePrf: { ko: "물리직인 스트레스 활성화 방식\n-> Microtubule", en: "Physical stress activation\n-> Microtubule" } },
-      growthFactorRetention: { label: { ko: "성장인자 유지", en: "Growth Factor Retention" }, prp: { ko: "1시간", en: "1 Hour" }, activePrp: { ko: "7일 이상 활성화 세포 치료", en: "7+ Days Active Cell Therapy" }, activePrf: { ko: "10~14일 지속적으로 재생 치료", en: "10-14 Days Continuous Regenerative Therapy" } },
-      growthFactorRelease: { label: { ko: "성장인자 방출", en: "Growth Factor Release" }, prp: { ko: "자연 방출(느림)", en: "Natural Release (Slow)" }, activePrp: { ko: "즉각 방출(빠르고 강력)", en: "Immediate Release (Fast & Strong)" }, activePrf: { ko: "즉각작이고 강함(고농도)", en: "Immediate & Strong (High Concentration)" } },
-      pain: { label: { ko: "통증", en: "Pain" }, prp: { ko: "아주 심함(ph4.5 강한 산성)", en: "Very Severe (pH 4.5 strong acid)" }, activePrp: { ko: "없음", en: "None" }, activePrf: { ko: "없음", en: "None" } },
-      effect: { label: { ko: "치료 효과", en: "Treatment Effect" }, prp: { ko: "서서히 효과 발현", en: "Gradual Effect Onset" }, activePrp: { ko: "빠른 조직 재생, 형혈 효과 우수", en: "Rapid Tissue Regeneration, Excellent Angiogenesis" }, activePrf: { ko: "빠른 조직 재생, 형혈 효과 우수", en: "Rapid Tissue Regeneration, Excellent Angiogenesis" } },
-      fibrin: { label: { ko: "섬유소", en: "Fibrin" }, prp: { ko: "파괴", en: "Destroyed" }, activePrp: { ko: "파괴", en: "Destroyed" }, activePrf: { ko: "보존", en: "Preserved" } },
-      nitricOxide: { label: { ko: "미토콘드리아 산화질소", en: "Mitochondrial Nitric Oxide" }, prp: { ko: "미미", en: "Minimal" }, activePrp: { ko: "6배 정도 방출", en: "Approx. 6x Release" }, activePrf: { ko: "6배 정도 방출", en: "Approx. 6x Release" } },
-      cellActivation: { label: { ko: "성장인자 활상화", en: "Growth Factor Activation" }, prp: { ko: "미미", en: "Minimal" }, activePrp: { ko: "강력한 세포 활상화", en: "Strong Cell Activation" }, activePrf: { ko: "강력안 세포 활상화", en: "Strong Cell Activation" } },
-      fibrinNetwork: { label: { ko: "섬유소 네트워크", en: "Fibrin Network" }, prp: { ko: "없음", en: "None" }, activePrp: { ko: "없음", en: "None" }, activePrf: { ko: "네트워킨 활성 혈소관, 백일구", en: "Networking Active Platelets, Leukocytes" } },
-      exosome: { label: { ko: "엑소좀 분비", en: "Exosome Secretion" }, prp: { ko: "없음", en: "None" }, activePrp: { ko: "있음", en: "Yes" }, activePrf: { ko: "있음", en: "Yes" } },
+      volume: {
+        label: { ko: "채혈량", en: "Blood Volume" },
+        prp: { ko: "10~30cc", en: "10~30cc" },
+        activePrp: { ko: "10~30cc", en: "10~30cc" },
+        activePrf: { ko: "10~30cc", en: "10~30cc" },
+      },
+      extraction: {
+        label: { ko: "PRP 추출량", en: "PRP Extraction Volume" },
+        prp: { ko: "1~3cc", en: "1~3cc" },
+        activePrp: { ko: "15cc", en: "15cc" },
+        activePrf: { ko: "15cc", en: "15cc" },
+      },
+      anticoagulant: {
+        label: { ko: "항응고제", en: "Anticoagulant" },
+        prp: { ko: "필요", en: "Required" },
+        activePrp: { ko: "필요", en: "Required" },
+        activePrf: { ko: "필요 없음", en: "Not Required" },
+      },
+      activation: {
+        label: { ko: "활성화 방법", en: "Activation Method" },
+        prp: {
+          ko: "자연 응고(비방상), 화학적 활성화 방식\n-> CaCl₂, 트롬빈",
+          en: "Natural coagulation, Chemical activation\n-> CaCl₂, Thrombin",
+        },
+        activePrp: {
+          ko: "물리직인 스트레스 활성화 방식\n-> Microtubule",
+          en: "Physical stress activation\n-> Microtubule",
+        },
+        activePrf: {
+          ko: "물리직인 스트레스 활성화 방식\n-> Microtubule",
+          en: "Physical stress activation\n-> Microtubule",
+        },
+      },
+      growthFactorRetention: {
+        label: { ko: "성장인자 유지", en: "Growth Factor Retention" },
+        prp: { ko: "1시간", en: "1 Hour" },
+        activePrp: {
+          ko: "7일 이상 활성화 세포 치료",
+          en: "7+ Days Active Cell Therapy",
+        },
+        activePrf: {
+          ko: "10~14일 지속적으로 재생 치료",
+          en: "10-14 Days Continuous Regenerative Therapy",
+        },
+      },
+      growthFactorRelease: {
+        label: { ko: "성장인자 방출", en: "Growth Factor Release" },
+        prp: { ko: "자연 방출(느림)", en: "Natural Release (Slow)" },
+        activePrp: {
+          ko: "즉각 방출(빠르고 강력)",
+          en: "Immediate Release (Fast & Strong)",
+        },
+        activePrf: {
+          ko: "즉각작이고 강함(고농도)",
+          en: "Immediate & Strong (High Concentration)",
+        },
+      },
+      pain: {
+        label: { ko: "통증", en: "Pain" },
+        prp: {
+          ko: "아주 심함(ph4.5 강한 산성)",
+          en: "Very Severe (pH 4.5 strong acid)",
+        },
+        activePrp: { ko: "없음", en: "None" },
+        activePrf: { ko: "없음", en: "None" },
+      },
+      effect: {
+        label: { ko: "치료 효과", en: "Treatment Effect" },
+        prp: { ko: "서서히 효과 발현", en: "Gradual Effect Onset" },
+        activePrp: {
+          ko: "빠른 조직 재생, 형혈 효과 우수",
+          en: "Rapid Tissue Regeneration, Excellent Angiogenesis",
+        },
+        activePrf: {
+          ko: "빠른 조직 재생, 형혈 효과 우수",
+          en: "Rapid Tissue Regeneration, Excellent Angiogenesis",
+        },
+      },
+      fibrin: {
+        label: { ko: "섬유소", en: "Fibrin" },
+        prp: { ko: "파괴", en: "Destroyed" },
+        activePrp: { ko: "파괴", en: "Destroyed" },
+        activePrf: { ko: "보존", en: "Preserved" },
+      },
+      nitricOxide: {
+        label: {
+          ko: "미토콘드리아 산화질소",
+          en: "Mitochondrial Nitric Oxide",
+        },
+        prp: { ko: "미미", en: "Minimal" },
+        activePrp: { ko: "6배 정도 방출", en: "Approx. 6x Release" },
+        activePrf: { ko: "6배 정도 방출", en: "Approx. 6x Release" },
+      },
+      cellActivation: {
+        label: { ko: "성장인자 활상화", en: "Growth Factor Activation" },
+        prp: { ko: "미미", en: "Minimal" },
+        activePrp: { ko: "강력한 세포 활상화", en: "Strong Cell Activation" },
+        activePrf: { ko: "강력안 세포 활상화", en: "Strong Cell Activation" },
+      },
+      fibrinNetwork: {
+        label: { ko: "섬유소 네트워크", en: "Fibrin Network" },
+        prp: { ko: "없음", en: "None" },
+        activePrp: { ko: "없음", en: "None" },
+        activePrf: {
+          ko: "네트워킨 활성 혈소관, 백일구",
+          en: "Networking Active Platelets, Leukocytes",
+        },
+      },
+      exosome: {
+        label: { ko: "엑소좀 분비", en: "Exosome Secretion" },
+        prp: { ko: "없음", en: "None" },
+        activePrp: { ko: "있음", en: "Yes" },
+        activePrf: { ko: "있음", en: "Yes" },
+      },
     },
     growthFactorTitle: {
       ko: "기존 PRP 대비 6배 높은 성장인자 방출률",
@@ -240,7 +421,10 @@ export const translations = {
       faq: { ko: "자주 묻는 질문", en: "FAQ" },
       notice: { ko: "공지사항", en: "Notices" },
     },
-    bannerTitle: { ko: "제품구입/AS문의", en: "Product Purchase / A/S Inquiry" },
+    bannerTitle: {
+      ko: "제품구입/AS문의",
+      en: "Product Purchase / A/S Inquiry",
+    },
     thehana: { ko: "더하나", en: "THE HANA" },
     reverseAgingCenter: { ko: "리버스에이징센터", en: "Reverse Aging Center" },
     select: { ko: "선택", en: "Select" },
@@ -254,17 +438,29 @@ export const translations = {
     address: { ko: "주소", en: "Address" },
     zipSearch: { ko: "우편번호 검색", en: "Search Zip Code" },
     addressPlaceholder: { ko: "주소를 입력하세요.", en: "Enter your address" },
-    addressDetailPlaceholder: { ko: "상세 주소를 입력하세요.", en: "Enter detailed address" },
+    addressDetailPlaceholder: {
+      ko: "상세 주소를 입력하세요.",
+      en: "Enter detailed address",
+    },
     privacyConsent: {
       ko: "개인정보 수집 및 이용약관을 확인하였으며, 이에 동의합니다.",
       en: "I have read and agree to the Privacy Policy and Terms of Use.",
     },
-    privacyLabel: { ko: "개인정보 수집 및 이용약관", en: "Privacy Policy and Terms of Use" },
+    privacyLabel: {
+      ko: "개인정보 수집 및 이용약관",
+      en: "Privacy Policy and Terms of Use",
+    },
     confirm: { ko: "확인", en: "Confirm" },
     cancel: { ko: "취소", en: "Cancel" },
     faqTitle: { ko: "자주 찾는 질문", en: "Frequently Asked Questions" },
-    faqSubtitle: { ko: "문의 하시기 전 궁금하신 사항을 확인하세요.", en: "Check your questions before contacting us." },
-    searchPlaceholder: { ko: "검색어를 입력하세요.", en: "Enter search keyword" },
+    faqSubtitle: {
+      ko: "문의 하시기 전 궁금하신 사항을 확인하세요.",
+      en: "Check your questions before contacting us.",
+    },
+    searchPlaceholder: {
+      ko: "검색어를 입력하세요.",
+      en: "Enter search keyword",
+    },
     titleOption: { ko: "제목", en: "Title" },
     contentOption: { ko: "내용", en: "Content" },
     all: { ko: "전체", en: "All" },
@@ -282,7 +478,10 @@ export const translations = {
     totalPrefix: { ko: "총 ", en: "Total " },
     totalSuffix: { ko: "건", en: " items" },
     titleFilter: { ko: "제목", en: "Title" },
-    searchPlaceholder: { ko: "검색어를 입력하세요", en: "Enter search keyword" },
+    searchPlaceholder: {
+      ko: "검색어를 입력하세요",
+      en: "Enter search keyword",
+    },
     instagram: { ko: "인스타그램", en: "Instagram" },
     youtube: { ko: "유튜브", en: "YouTube" },
     firstPage: { ko: "첫 페이지", en: "First page" },
@@ -297,6 +496,6 @@ export const translations = {
     search: { ko: "검색", en: "Search" },
     select: { ko: "선택", en: "Select" },
   },
-} as const
+} as const;
 
-export type TranslationKeys = typeof translations
+export type TranslationKeys = typeof translations;
