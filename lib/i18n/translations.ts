@@ -60,7 +60,7 @@ export const translations = {
     heading: { ko: "THEHANA R.A.C 제품 구매", en: "THEHANA R.A.C Products" },
     more: { ko: "더 보기", en: "See More" },
     desc: {
-      ko: "더하나 리버스 센터에서는 의료인을 위한 전문 의료기기부터 고기능성 키트까지, 역노화의 전 과정을 아우르는 차별화된 솔루션을 제공합니다.",
+      ko: "더하나 리버스 센터에서는 의료인을 위한 전문 의료기기부터 고기능성 키트까지,\n역노화의 전 과정을 아우르는 차별화된 솔루션을 제공합니다.",
       en: "THE HANA Reverse Aging Center offers differentiated solutions covering the entire anti-aging process, from professional medical devices for medical practitioners to high-functionality kits.",
     },
     activatorTitle: { ko: "혈액 활성화기", en: "Blood Activator" },
@@ -126,11 +126,15 @@ export const translations = {
 
   // ── Footer ──
   footer: {
-    company: { ko: "㈜세일즈코어", en: "Salescore Co., Ltd." },
+    company: { ko: "㈜더하나코퍼레이션", en: "Thehana Corporation Co., Ltd." },
     ceo: { ko: "대표이사 : 한재선", en: "CEO: Jaeseon Han" },
     businessNo: {
       ko: "사업자등록번호 : 361-81-00506",
       en: "Business No.: 361-81-00506",
+    },
+    address: {
+      ko: "주소 : 06017 서울시 강남구 압구정로 306",
+      en: "Address: 306 Apgujeong-ro, Gangnam-gu, Seoul, 06017",
     },
     privacy: { ko: "개인정보처리방침", en: "Privacy Policy" },
     emailReject: { ko: "이메일무단수집거부", en: "Anti-Spam Policy" },
@@ -490,11 +494,153 @@ export const translations = {
     lastPage: { ko: "마지막 페이지", en: "Last page" },
   },
 
+  // ── Auth (login / register / google / errors) ──
+  auth: {
+    loginTitle: { ko: "로그인", en: "Sign in" },
+    loginDescription: {
+      ko: "더하나 R.A.C 계정으로 로그인하세요.",
+      en: "Sign in to continue with THE HANA R.A.C.",
+    },
+    registerTitle: { ko: "회원가입", en: "Create account" },
+    registerDescription: {
+      ko: "단 몇 초 만에 시작할 수 있습니다.",
+      en: "It only takes a few seconds to get started.",
+    },
+    name: { ko: "이름", en: "Full name" },
+    namePlaceholder: { ko: "홍길동", en: "Your full name" },
+    email: { ko: "이메일", en: "Email" },
+    emailPlaceholder: { ko: "you@example.com", en: "you@example.com" },
+    password: { ko: "비밀번호", en: "Password" },
+    passwordPlaceholder: { ko: "••••••••", en: "••••••••" },
+    passwordHint: {
+      ko: "최소 6자 이상 입력하세요.",
+      en: "At least 6 characters.",
+    },
+    confirmPassword: { ko: "비밀번호 확인", en: "Confirm password" },
+    submitLogin: { ko: "로그인", en: "Sign in" },
+    submitRegister: { ko: "가입하기", en: "Create account" },
+    loadingLogin: { ko: "로그인 중...", en: "Signing in..." },
+    loadingRegister: { ko: "계정 생성 중...", en: "Creating account..." },
+    or: { ko: "또는", en: "or" },
+    continueGoogle: { ko: "Google로 계속하기", en: "Continue with Google" },
+    registerGoogle: { ko: "Google로 가입", en: "Sign up with Google" },
+    googleConnecting: { ko: "이동 중...", en: "Redirecting..." },
+    googleVerifying: {
+      ko: "Google 인증 처리 중...",
+      en: "Verifying with Google...",
+    },
+    googleCallbackTitle: {
+      ko: "Google 로그인",
+      en: "Sign in with Google",
+    },
+    googleFailedTitle: {
+      ko: "로그인 실패",
+      en: "Sign-in failed",
+    },
+    googleMissingCode: {
+      ko: "Google 인증 코드가 누락되었습니다.",
+      en: "Missing authorization code from Google.",
+    },
+    googleGenericError: {
+      ko: "Google 로그인에 실패했습니다. 다시 시도해 주세요.",
+      en: "Could not sign in with Google. Please try again.",
+    },
+    haveAccount: { ko: "이미 계정이 있으신가요?", en: "Already have an account?" },
+    noAccount: { ko: "계정이 없으신가요?", en: "Don't have an account?" },
+    goRegister: { ko: "가입하기", en: "Sign up" },
+    goLogin: { ko: "로그인", en: "Sign in" },
+    successLogin: { ko: "로그인 성공", en: "Signed in successfully" },
+    successRegister: { ko: "가입 완료", en: "Account created" },
+    failedLogin: { ko: "로그인 실패", en: "Sign-in failed" },
+    failedRegister: { ko: "가입 실패", en: "Sign-up failed" },
+    requireSignIn: {
+      ko: "로그인이 필요합니다.",
+      en: "Please sign in to continue.",
+    },
+    loading: { ko: "불러오는 중...", en: "Loading..." },
+
+    // validation
+    errEmailRequired: { ko: "이메일을 입력하세요.", en: "Please enter your email." },
+    errEmailInvalid: { ko: "올바른 이메일 형식이 아닙니다.", en: "Invalid email format." },
+    errPasswordMin: { ko: "비밀번호는 최소 6자 이상이어야 합니다.", en: "Password must be at least 6 characters." },
+    errNameMin: { ko: "이름은 최소 2자 이상이어야 합니다.", en: "Name must be at least 2 characters." },
+    errConfirmRequired: { ko: "비밀번호를 다시 입력하세요.", en: "Please confirm your password." },
+    errConfirmMismatch: { ko: "비밀번호가 일치하지 않습니다.", en: "Passwords do not match." },
+  },
+
+  // ── Dashboard ──
+  dashboard: {
+    eyebrow: { ko: "대시보드", en: "Dashboard" },
+    greet: { ko: "환영합니다", en: "Welcome" },
+    accountInfo: { ko: "계정 정보", en: "Account information" },
+    accountInfoDesc: {
+      ko: "이 정보는 페이지를 열 때마다 백엔드에서 동기화됩니다.",
+      en: "This data is synced from the backend every time you open this page.",
+    },
+    fieldName: { ko: "이름", en: "Name" },
+    fieldEmail: { ko: "이메일", en: "Email" },
+    fieldRole: { ko: "역할", en: "Role" },
+    fieldProvider: { ko: "로그인 방식", en: "Sign-in provider" },
+    signOut: { ko: "로그아웃", en: "Sign out" },
+  },
+
+  // ── Shop / Products (backend-driven) ──
+  shop: {
+    pageTitle: { ko: "상품", en: "Shop" },
+    subtitle: {
+      ko: "더하나 R.A.C의 모든 상품을 한곳에서 만나보세요.",
+      en: "Browse all THE HANA R.A.C products in one place.",
+    },
+    empty: { ko: "표시할 상품이 없습니다.", en: "No products to show." },
+    inStock: { ko: "재고 있음", en: "In stock" },
+    outOfStock: { ko: "품절", en: "Sold out" },
+    quantity: { ko: "수량", en: "Quantity" },
+    addToCart: { ko: "장바구니 담기", en: "Add to cart" },
+    buyNow: { ko: "바로 구매", en: "Buy now" },
+    description: { ko: "상품 설명", en: "Description" },
+    backToShop: { ko: "← 상품 목록", en: "← Back to shop" },
+    addedToast: {
+      ko: "장바구니에 담았습니다.",
+      en: "Added to cart.",
+    },
+    cartLink: { ko: "장바구니 보기", en: "View cart" },
+    productNotFound: { ko: "상품을 찾을 수 없습니다.", en: "Product not found." },
+  },
+
+  // ── Cart ──
+  cart: {
+    pageTitle: { ko: "장바구니", en: "Cart" },
+    empty: { ko: "장바구니가 비어 있습니다.", en: "Your cart is empty." },
+    emptyCta: { ko: "쇼핑 계속하기", en: "Continue shopping" },
+    item: { ko: "상품", en: "Item" },
+    price: { ko: "가격", en: "Price" },
+    quantity: { ko: "수량", en: "Qty" },
+    subtotal: { ko: "소계", en: "Subtotal" },
+    remove: { ko: "삭제", en: "Remove" },
+    summary: { ko: "주문 요약", en: "Order summary" },
+    summarySubtotal: { ko: "상품 합계", en: "Subtotal" },
+    summaryShipping: { ko: "배송비", en: "Shipping" },
+    summaryTotal: { ko: "총 결제 금액", en: "Total" },
+    summaryShippingFree: { ko: "무료", en: "Free" },
+    summaryShippingCalculated: {
+      ko: "결제 시 계산됩니다",
+      en: "Calculated at checkout",
+    },
+    proceedCheckout: { ko: "결제하기", en: "Proceed to checkout" },
+    clear: { ko: "장바구니 비우기", en: "Clear cart" },
+  },
+
   // ── Common ──
   common: {
     more: { ko: "더 보기", en: "See More" },
     search: { ko: "검색", en: "Search" },
     select: { ko: "선택", en: "Select" },
+    loading: { ko: "불러오는 중...", en: "Loading..." },
+    retry: { ko: "다시 시도", en: "Retry" },
+    cancel: { ko: "취소", en: "Cancel" },
+    confirm: { ko: "확인", en: "Confirm" },
+    save: { ko: "저장", en: "Save" },
+    error: { ko: "오류가 발생했습니다.", en: "Something went wrong." },
   },
 } as const;
 

@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { Plus, MessageSquareMore, Phone } from "lucide-react"
 import { useI18n } from "@/lib/i18n/context"
+import Image from "next/image"
 
 export function FaqContactSection() {
   const { locale, t } = useI18n()
@@ -84,10 +85,12 @@ export function FaqContactSection() {
             </header>
             <p className="mt-6 text-sm text-brand-text">{t("faqContact", "onlineDesc")}</p>
 
-            <div className="mt-10 flex justify-end" aria-hidden="true">
-              <MessageSquareMore
-                className="h-14 w-14 text-brand-line"
-                strokeWidth={1.25}
+            <div className="mt-auto flex justify-end" aria-hidden="true">
+              <Image
+                src="/message1.png"
+                alt="FAQ Contact Icon"
+                width={56}
+                height={56}
               />
             </div>
           </article>
@@ -113,8 +116,13 @@ export function FaqContactSection() {
               <p className="pt-1">{t("faqContact", "holiday")}</p>
             </dl>
 
-            <div className="mt-6 flex justify-end" aria-hidden="true">
-              <Phone className="h-14 w-14 text-brand-line" strokeWidth={1.25} />
+            <div className="mt-auto flex justify-end" aria-hidden="true">
+              <Image
+                src="/message2.png"
+                alt="Phone Icon"
+                width={56}
+                height={56}
+              />
             </div>
           </article>
         </div>

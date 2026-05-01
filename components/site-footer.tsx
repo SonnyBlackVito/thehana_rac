@@ -101,7 +101,7 @@ export function SiteFooter() {
         </div>
 
         <p className="mt-5 text-[11px] leading-relaxed text-background/50 sm:mt-6 sm:text-xs">
-          Copyright© 2026 by Salescore Co., Ltd. All rights reserved
+          Copyright© 2026 by Thehana Corporation CO., Ltd. All rights reserved
         </p>
       </div>
     </footer>

@@ -68,7 +68,7 @@ export function ProductsSection() {
               {t("productsSection", "more")}
             </Link>
           </div>
-          <p className="max-w-2xl text-pretty text-[15px] leading-relaxed text-brand-text md:text-base">
+          <p className="max-w-2xl text-center whitespace-pre-line text-pretty text-[15px] leading-relaxed text-brand-text md:text-base">
             {t("productsSection", "desc")}
           </p>
         </div>
@@ -112,11 +112,9 @@ export function ProductsSection() {
                   className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
                 />
 
-                {product.showMore ? (
-                  <span className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white bg-white/10 px-5 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-all duration-300 group-hover:bg-white group-hover:text-foreground group-hover:scale-105">
-                    {t("productsSection", "more")}
-                  </span>
-                ) : null}
+                <span className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white bg-white/10 px-5 py-1.5 text-xs font-medium text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-white group-hover:text-foreground group-hover:opacity-100">
+                  {t("productsSection", "more")}
+                </span>
               </div>
             </Link>
           ))}

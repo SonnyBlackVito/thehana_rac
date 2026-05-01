@@ -11,6 +11,9 @@ export function ProductGrid() {
     { name: t("products", "gridActivator"), image: "/grid-activator.png", alt: "Blood Activator", href: "/products/activator" },
     { name: t("products", "gridMini"), image: "/grid-activator-mini.png", alt: "Blood Activator MINI", href: "/products/mini" },
     { name: t("products", "gridSeparator"), image: "/grid-blood-separator.png", alt: "Blood Separator", href: "/products/separator" },
+    { name: "ACT PRF", image: "/product-act-prf.png", alt: "ACT PRF Kit", href: "/products/act-prf" },
+    { name: "ACT PRF D", image: "/product-act-bms30.png", alt: "ACT BMS 30 Kit", href: "/products/act-bms30" },
+    { name: "ACT BMS 30", image: "/product-act-prp-d.png", alt: "ACT PRP-D Kit", href: "/products/act-prp-d" },
   ];
 
   return (
