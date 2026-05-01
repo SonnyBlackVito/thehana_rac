@@ -12,9 +12,12 @@ export function RevercellSection() {
       id="revercell"
       aria-labelledby="revercell-title"
       className="relative w-full scroll-mt-24 overflow-hidden"
+      style={{ backgroundImage: "url('/revercell-bg.png')" }
+    }
+
     >
       {/* Background image with 50% white overlay to match Figma */}
-      <div className="absolute inset-0 -z-10">
+      {/* <div className="absolute inset-0 -z-10">
         <Image
           src="/revercell-bg.png"
           alt=""
@@ -24,7 +27,7 @@ export function RevercellSection() {
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-background/50" aria-hidden="true" />
-      </div>
+      </div> */}
 
       <div className="mx-auto w-full max-w-[1440px] px-6 pt-4 pb-10 md:px-10 md:pb-16">
         {/* Section header: left-aligned title + short green accent bar */}
@@ -53,18 +56,18 @@ export function RevercellSection() {
         </div>
 
         {/* Two treatment photos side by side */}
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 md:mt-16 md:gap-8">
+        <div className="mt-12 flex flex-wrap justify-center gap-6 md:mt-16 md:gap-8">
           <Link
             href="/products/revercell"
             aria-label="Revercell IV drip treatment details"
-            className="group relative block aspect-[3/4] w-full overflow-hidden animate-fade-in-up delay-500 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="group block relative overflow-hidden animate-fade-in-up delay-500 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             <Image
               src="/revercell-iv-drip.png"
               alt="Revercell IV drip treatment"
-              fill
-              sizes="(min-width: 640px) 50vw, 100vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              width={420}
+              height={596}
+              className="object-cover transition-transform duration-500 group-hover:scale-105 w-[calc(50vw-48px)] h-auto max-w-[420px] md:w-[420px]"
             />
             <div
               className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -74,14 +77,14 @@ export function RevercellSection() {
           <Link
             href="/products/revercell"
             aria-label="Revercell face injection treatment details"
-            className="group relative block aspect-[3/4] w-full overflow-hidden animate-fade-in-up delay-500 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="group block relative overflow-hidden animate-fade-in-up delay-500 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             <Image
               src="/revercell-face-injection.png"
               alt="Revercell face injection treatment"
-              fill
-              sizes="(min-width: 640px) 50vw, 100vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              width={420}
+              height={596}
+              className="object-cover transition-transform duration-500 group-hover:scale-105 w-[calc(50vw-48px)] h-auto max-w-[420px] md:w-[420px]"
             />
             <div
               className="absolute inset-0 bg-primary/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
