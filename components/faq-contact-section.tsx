@@ -39,7 +39,7 @@ export function FaqContactSection() {
           <div
             role="tablist"
             aria-label="FAQ"
-            className="mt-8 -mx-4 flex items-center gap-x-6 overflow-x-auto border-b border-border px-4 pb-3 [scrollbar-width:none] sm:mt-10 sm:mx-0 sm:flex-wrap sm:gap-x-10 sm:gap-y-4 sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
+            className="mt-8 -mx-4 flex items-center gap-x-6 overflow-x-auto  px-4 pb-3 [scrollbar-width:none] sm:mt-10 sm:mx-0 sm:flex-wrap sm:gap-x-10 sm:gap-y-4 sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
           >
             {faqTabs.map((tab) => {
               const isActive = tab === activeTab
