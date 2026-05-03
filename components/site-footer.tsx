@@ -1,19 +1,34 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Youtube, Instagram, Store } from "lucide-react"
-import { useI18n } from "@/lib/i18n/context"
+import Link from "next/link";
+import { Youtube, Instagram, Store } from "lucide-react";
+import { useI18n } from "@/lib/i18n/context";
 
 export function SiteFooter() {
-  const { locale, t } = useI18n()
+  const { locale, t } = useI18n();
 
   const branches = [
-    { label: locale === "ko" ? "인바디 본사" : "HQ", address: "06106 서울시 강남구 언주로 625 인바디빌딩" },
-    { label: locale === "ko" ? "인바디 공장" : "Factory", address: "31025 충청남도 천안시 서북구 입장면 흑암길 15" },
-    { label: locale === "ko" ? "인바디 벤처센터" : "Venture Center", address: "06313 서울시 강남구 논현로2길 54 인바디벤처센터" },
-    { label: locale === "ko" ? "인바디 양재센터" : "Yangjae Center", address: "06779 서울특별시 서초구 동산로 1 5층 인바디양재센터" },
-    { label: locale === "ko" ? "인바디 2공장" : "Factory 2", address: "31026 충청남도 천안시 서북구 입장면 연곡길 330" },
-  ]
+    {
+      label: locale === "ko" ? "인바디 본사" : "HQ",
+      address: "06106 서울시 강남구 언주로 625 인바디빌딩",
+    },
+    {
+      label: locale === "ko" ? "인바디 공장" : "Factory",
+      address: "31025 충청남도 천안시 서북구 입장면 흑암길 15",
+    },
+    {
+      label: locale === "ko" ? "인바디 벤처센터" : "Venture Center",
+      address: "06313 서울시 강남구 논현로2길 54 인바디벤처센터",
+    },
+    {
+      label: locale === "ko" ? "인바디 양재센터" : "Yangjae Center",
+      address: "06779 서울특별시 서초구 동산로 1 5층 인바디양재센터",
+    },
+    {
+      label: locale === "ko" ? "인바디 2공장" : "Factory 2",
+      address: "31026 충청남도 천안시 서북구 입장면 연곡길 330",
+    },
+  ];
 
   return (
     <footer className="w-full bg-brand-footer text-background">
@@ -22,12 +37,18 @@ export function SiteFooter() {
           {/* Left column: logo + company info */}
           <div>
             <div className="flex flex-col leading-none text-background">
-              <span className="font-serif text-[22px] font-light tracking-[0.08em]">THE HANA</span>
-              <span className="font-serif text-[22px] font-light tracking-[0.28em]">R.A.C</span>
+              <span className="font-serif text-[22px] font-light tracking-[0.08em]">
+                THE HANA
+              </span>
+              <span className="font-serif text-[22px] font-light tracking-[0.28em]">
+                R.A.C
+              </span>
             </div>
 
             <div className="mt-6 space-y-2 text-[13px] leading-relaxed text-background/80 sm:mt-10 sm:space-y-3 sm:text-sm">
-              <p className="text-[14px] font-semibold text-background sm:text-[15px]">{t("footer", "company")}</p>
+              <p className="text-[14px] font-semibold text-background sm:text-[15px]">
+                {t("footer", "company")}
+              </p>
               <p className="flex flex-wrap gap-x-4 gap-y-1">
                 <span>{t("footer", "ceo")}</span>
                 <span>{t("footer", "businessNo")}</span>
@@ -38,7 +59,7 @@ export function SiteFooter() {
 
           {/* Right column: branch addresses */}
           <div>
-            <dl className="space-y-3 text-[13px] leading-relaxed text-background/80 sm:space-y-2 sm:text-sm">
+            {/* <dl className="space-y-3 text-[13px] leading-relaxed text-background/80 sm:space-y-2 sm:text-sm">
               {branches.map((branch) => (
                 <div
                   key={branch.label}
@@ -48,7 +69,7 @@ export function SiteFooter() {
                   <dd className="flex-1">{branch.address}</dd>
                 </div>
               ))}
-            </dl>
+            </dl> */}
           </div>
         </div>
 
@@ -105,5 +126,5 @@ export function SiteFooter() {
         </p>
       </div>
     </footer>
-  )
+  );
 }
