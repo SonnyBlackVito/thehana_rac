@@ -5,6 +5,7 @@ import { ProductsIntro } from "@/components/products/products-intro"
 import { ProductGrid } from "@/components/products/product-grid"
 import { RevercellSection } from "@/components/products/revercell-section"
 import { DeepSeaSection } from "@/components/products/deepsea-section"
+import { QuantumRestSection } from "@/components/products/quantum-rest-section"
 
 export default function ProductsPage() {
   return (
@@ -16,6 +17,7 @@ export default function ProductsPage() {
         <ProductGrid />
         <RevercellSection />
         <DeepSeaSection />
+        <QuantumRestSection />
       </main>
       <SiteFooter />
     </div>

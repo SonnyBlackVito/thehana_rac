@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Noto_Sans_KR } from "next/font/google"
+import { Inter, Noto_Sans_KR } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { I18nProvider } from "@/lib/i18n/context"
 import { AuthProvider } from "@/components/auth-provider"
@@ -10,6 +10,13 @@ const notoSansKr = Noto_Sans_KR({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700", "900"],
   variable: "--font-noto-kr",
+  display: "swap",
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-inter",
   display: "swap",
 })
 
@@ -26,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ko" className={`${notoSansKr.variable} bg-background`} suppressHydrationWarning>
+    <html lang="ko" className={`${notoSansKr.variable} ${inter.variable} bg-background`} suppressHydrationWarning>
       <body className="font-sans antialiased text-foreground" suppressHydrationWarning>
         <I18nProvider>
           <AuthProvider>{children}</AuthProvider>

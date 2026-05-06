@@ -229,6 +229,22 @@ export const translations = {
       ko: "세계 최고 수준의 해양 1km 청정 수심에서 취수하여 불순물이 전혀 없는 순수함을 자랑합니다. 어머니의 양수와 유사한 미네랄 밸런스를 갖춘 70여 종의 이온 미네랄이 체내에 빠르게 흡수됩니다. 신체 복구의 토대, 미네랄 밸런스줄기세포가 손상된 세포와 조직을 회복시키기 위해서는 체액의 미네랄 밸런스가 필수적입니다. 리워터에 함유된 고농도의 마그네슘(50~71mg/L)과 칼슘(16~25mg/L) 은 줄기세포가 신체 각 조직으로 분화하고 자가 증식하는 과정에서 핵심적인 촉매제 역할을 하며 근본적인 재생을 지원합니다. 리버셀의 활성화 기술로 투여된 줄기세포가 혈관을 타고 전신에 도달하기 위해서는 혈액의 점도와 순환 능력이 중요합니다. 리워터는 원활한 신진대사와 혈행 밸런스 케어를 통해 새로운 혈관이 신생되는 과정을 돕습니다. 특히 미세혈관까지 도달하는 수분 공급 능력을 통해 심혈관계 합병증 완화와 전신 활력 증진에 기여합니다.",
       en: "Drawing water from the world's highest level of ocean clean depths at 1km, it boasts purity with absolutely no impurities. Over 70 types of ionic minerals with a mineral balance similar to mother's amniotic fluid are rapidly absorbed into the body. The foundation of body repair requires mineral balance for stem cells to restore damaged cells and tissues. The high-concentration magnesium (50-71mg/L) and calcium (16-25mg/L) contained in Re:water play a crucial catalyst role in the process of stem cell differentiation into various body tissues and self-proliferation, supporting fundamental regeneration. For stem cells administered through Revercell's activation technology to reach the entire body through blood vessels, blood viscosity and circulation ability are important. Re:water helps the process of new blood vessel creation through smooth metabolism and blood circulation balance care. In particular, through its ability to deliver moisture to even microvessels, it contributes to alleviating cardiovascular complications and enhancing overall vitality.",
     },
+    quantumRestTitle: {
+      ko: "단순한 휴식을 넘어, 세포의 잠을 깨우는 과학",
+      en: "Beyond Simple Rest, the Science of Awakening Cells",
+    },
+    quantumRestDesc: {
+      ko: "기존의 단순한 고압 산소 공급 방식에서 한 걸음 더 나아갔습니다. 양자 산소 챔버는 독자적인 양자 파동 기술을 결합하여, 산소 입자가 세포막을 보다 효율적이고 깊숙이 통과할 수 있도록 돕습니다. 이를 통해 일반적인 산소 테라피로는 도달하기 어려웠던 체내 깊은 곳까지 풍부한 에너지를 전달합니다. 세포 내부의 에너지 공장인 미토콘드리아를 양자 에너지가 직접 자극합니다. 세포 공명 현상을 통해 정체되어 있던 에너지 대사를 정상화함으로써, 만성적인 무기력증을 해소하고 몸 전체의 활력을 즉각적으로 회복시켜 드립니다. 눈에 보이지 않는 미세한 양자 진동이 신체 구석구석에 전달됩니다. 이 강력한 진동은 체내 깊숙이 쌓여 배출되지 못했던 노폐물과 독소의 배출을 촉진하여, 몸의 무거움을 근본적으로 해결하고 한결 가벼워진 신체 컨디션을 선사합니다.",
+      en: "We go one step beyond conventional high-pressure oxygen supply. The quantum oxygen chamber combines proprietary quantum wave technology to help oxygen particles pass through cell membranes more efficiently and deeply. This delivers rich energy to deep areas of the body that ordinary oxygen therapy struggles to reach. Quantum energy directly stimulates mitochondria, the energy factories inside cells. Through cellular resonance, stagnant energy metabolism is normalized, helping relieve chronic fatigue and restore vitality throughout the body. Subtle quantum vibrations are delivered throughout the body, promoting the release of waste and toxins that have accumulated deeply and supporting a lighter physical condition.",
+    },
+    quantumRestImageAlt1: {
+      ko: "양자 산소 챔버 라운지 공간",
+      en: "Quantum oxygen chamber lounge space",
+    },
+    quantumRestImageAlt2: {
+      ko: "양자 산소 챔버 룸 공간",
+      en: "Quantum oxygen chamber room space",
+    },
   },
 
   // ── Research Page ──
@@ -474,6 +490,26 @@ export const translations = {
 
   // ── Press / News Page ──
   press: {
+    membershipTitle: { ko: "R.A.C 멤버십", en: "R.A.C Membership" },
+    membershipSubtitle: {
+      ko: "더하나 리버스에이징 VIP 멤버십",
+      en: "THE HANA Reverse Aging VIP Membership",
+    },
+    membershipHeadline: {
+      ko: "어제보다 젊은 내일, THE HANA가 설계하는 리버스 에이징의 시작",
+      en: "A Younger Tomorrow Than Yesterday, the Beginning of Reverse Aging Designed by THE HANA",
+    },
+    membershipDesc: {
+      ko: "\"단순한 관리를 넘어, 세포의 시간을 재구성합니다.\"\n프리미엄 딥씨워터 '리워터(Re:water)'와 AGE TECH의 혁신적 만남.\n세포 활력과 미네랄 밸런스를 되찾아주는 정교한 케어를 통해\n오직 당신만을 위한 '타임리스 뷰티(Timeless Beauty)'를 완성합니다.",
+      en: "\"Beyond simple care, we reconstruct cellular time.\"\nA premium encounter between deep sea water 'Re:water' and AGE TECH innovation.\nThrough precise care that restores cellular vitality and mineral balance,\nwe complete 'Timeless Beauty' created only for you.",
+    },
+    membershipGoldAlt: { ko: "더하나 VIP 골드 멤버십 카드", en: "THE HANA VIP Gold membership card" },
+    membershipPlatinumAlt: {
+      ko: "더하나 VIP 플래티넘 멤버십 카드",
+      en: "THE HANA VIP Platinum membership card",
+    },
+    membershipBlackAlt: { ko: "더하나 VIP 블랙 멤버십 카드", en: "THE HANA VIP Black membership card" },
+    membershipDetailButton: { ko: "자세히 보기", en: "View details" },
     pageTitle: { ko: "보도자료", en: "Press Releases" },
     subtitle: {
       ko: "더하나 R.A.C의 최신 소식과 언론 보도를 한눈에 확인하세요.",
