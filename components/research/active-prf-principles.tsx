@@ -141,23 +141,22 @@ export function ActivePrfPrinciples() {
                     <td className="px-4 py-3 text-[13px] font-medium text-[#3E454B] md:text-[15px]">
                       {rowData.label[locale]}
                     </td>
-                    <td className="whitespace-pre-line px-4 py-3 text-center text-[13px] text-[#3E454B] md:text-[15px]">
-                      {rowData.prp[locale]}
-                    </td>
+                    <td
+                      className="whitespace-pre-line px-4 py-3 text-center text-[13px] text-[#3E454B] md:text-[15px]"
+                      dangerouslySetInnerHTML={{ __html: rowData.prp[locale] }}
+                    />
                     <td
                       className={`whitespace-pre-line px-4 py-3 text-center text-[13px] text-[#3E454B] md:text-[15px] ${
                         highlightActivePrp ? "bg-[#EBFFEC]" : ""
                       }`}
-                    >
-                      {rowData.activePrp[locale]}
-                    </td>
+                      dangerouslySetInnerHTML={{ __html: rowData.activePrp[locale] }}
+                    />
                     <td
                       className={`whitespace-pre-line px-4 py-3 text-center text-[13px] text-[#3E454B] md:text-[15px] ${
                         highlightActivePrf ? "bg-[#EBFFEC]" : ""
                       }`}
-                    >
-                      {rowData.activePrf[locale]}
-                    </td>
+                      dangerouslySetInnerHTML={{ __html: rowData.activePrf[locale] }}
+                    />
                   </tr>
                 );
               })}

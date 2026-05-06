@@ -318,12 +318,12 @@ export const translations = {
           en: "Natural coagulation, Chemical activation\n-> CaCl₂, Thrombin",
         },
         activePrp: {
-          ko: "물리직인 스트레스 활성화 방식\n-> Microtubule",
-          en: "Physical stress activation\n-> Microtubule",
+          ko: "<b>물리적인 스트레스 활성화 방식</b>\n-> <b>Microtubule</b>",
+          en: "<b>Physical stress activation</b>\n-> <b>Microtubule</b>",
         },
         activePrf: {
-          ko: "물리직인 스트레스 활성화 방식\n-> Microtubule",
-          en: "Physical stress activation\n-> Microtubule",
+          ko: "<b>물리적인 스트레스 활성화 방식</b>\n-> <b>Microtubule</b>",
+          en: "<b>Physical stress activation</b>\n-> <b>Microtubule</b>",
         },
       },
       growthFactorRetention: {
@@ -342,8 +342,8 @@ export const translations = {
         label: { ko: "성장인자 방출", en: "Growth Factor Release" },
         prp: { ko: "자연 방출(느림)", en: "Natural Release (Slow)" },
         activePrp: {
-          ko: "즉각 방출(빠르고 강력)",
-          en: "Immediate Release (Fast & Strong)",
+          ko: "<b>즉각 방출(빠르고 강력)</b>",
+          en: "<b>Immediate Release (Fast & Strong)</b>",
         },
         activePrf: {
           ko: "즉각작이고 강함(고농도)",
@@ -363,12 +363,12 @@ export const translations = {
         label: { ko: "치료 효과", en: "Treatment Effect" },
         prp: { ko: "서서히 효과 발현", en: "Gradual Effect Onset" },
         activePrp: {
-          ko: "빠른 조직 재생, 형혈 효과 우수",
-          en: "Rapid Tissue Regeneration, Excellent Angiogenesis",
+          ko: "<b>빠른 조직 재생, 항염 효과 우수</b>",
+          en: "<b>Rapid Tissue Regeneration, Excellent Angiogenesis</b>",
         },
         activePrf: {
-          ko: "빠른 조직 재생, 형혈 효과 우수",
-          en: "Rapid Tissue Regeneration, Excellent Angiogenesis",
+          ko: "<b>빠른 조직 재생, 항염 효과 우수</b>",
+          en: "<b>Rapid Tissue Regeneration, Excellent Angiogenesis</b>",
         },
       },
       fibrin: {
@@ -387,18 +387,18 @@ export const translations = {
         activePrf: { ko: "6배 정도 방출", en: "Approx. 6x Release" },
       },
       cellActivation: {
-        label: { ko: "성장인자 활상화", en: "Growth Factor Activation" },
+        label: { ko: "성장인자 활성화", en: "Growth Factor Activation" },
         prp: { ko: "미미", en: "Minimal" },
-        activePrp: { ko: "강력한 세포 활상화", en: "Strong Cell Activation" },
-        activePrf: { ko: "강력안 세포 활상화", en: "Strong Cell Activation" },
+        activePrp: { ko: "<b>강력한 세포 활성화</b>", en: "<b>Strong Cell Activation</b>" },
+        activePrf: { ko: "<b>강력한 세포 활성화</b>", en: "<b>Strong Cell Activation</b>" },
       },
       fibrinNetwork: {
         label: { ko: "섬유소 네트워크", en: "Fibrin Network" },
         prp: { ko: "없음", en: "None" },
         activePrp: { ko: "없음", en: "None" },
         activePrf: {
-          ko: "네트워킨 활성 혈소관, 백일구",
-          en: "Networking Active Platelets, Leukocytes",
+          ko: "<b>네트워크된 활성 혈소판, 백혈구</b>",
+          en: "<b>Networking Active Platelets, Leukocytes</b>",
         },
       },
       exosome: {
