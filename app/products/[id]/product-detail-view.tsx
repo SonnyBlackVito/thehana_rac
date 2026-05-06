@@ -6,13 +6,7 @@ import { useState } from "react"
 import { notFound } from "next/navigation"
 import {
   ChevronRight,
-  ShoppingCart,
   Heart,
-  Minus,
-  Plus,
-  Truck,
-  ShieldCheck,
-  RotateCcw,
   CheckCircle2,
   Sparkles,
   FlaskConical,
@@ -21,6 +15,8 @@ import {
   Activity,
   Zap,
   Award,
+  ShieldCheck,
+  MessageCircle,
 } from "lucide-react"
 
 import { useI18n } from "@/lib/i18n/context"
@@ -42,7 +38,7 @@ type Spec = {
 type Product = {
   image: string
   gallery?: string[]
-  category: Bilingual
+  category?: Bilingual
   badge?: Bilingual
   title: Bilingual
   tagline: Bilingual
@@ -51,7 +47,7 @@ type Product = {
   features: Feature[]
   specs: Spec[]
   includes: BilingualList
-  price: string
+  price?: string
   originalPrice?: string
 }
 
@@ -73,8 +69,8 @@ const productsData: Record<string, Product> = {
     badge: { ko: "BEST SELLER", en: "BEST SELLER" },
     title: { ko: "혈액 활성화기", en: "Blood Activator" },
     tagline: {
-      ko: "ACT PRO PRP 활성화 장비",
-      en: "ACT PRO PRP Activation Device",
+      ko: "혈구세포 활성화 장치 ACT PRO AUTO",
+      en: "Blood Cell Activation Device ACT PRO AUTO",
     },
     description: {
       ko: "화학 첨가물 없이, 오직 내 혈액으로 완성하는 자가 치유의 혁신. 최첨단 정밀도로 완벽한 활성 PRF를 추출합니다.",
@@ -144,7 +140,6 @@ const productsData: Record<string, Product> = {
   },
   mini: {
     image: "/grid-activator-mini.png",
-    category: { ko: "의료 장비", en: "Medical Equipment" },
     badge: { ko: "NEW", en: "NEW" },
     title: { ko: "혈액 활성화기 MINI", en: "Blood Activator MINI" },
     tagline: {
@@ -206,7 +201,6 @@ const productsData: Record<string, Product> = {
   },
   separator: {
     image: "/grid-blood-separator.png",
-    category: { ko: "의료 장비", en: "Medical Equipment" },
     title: { ko: "혈액 분리 장치", en: "Blood Separator" },
     tagline: {
       ko: "고품질 PRP/PRF 분리 전용 장비",
@@ -267,7 +261,6 @@ const productsData: Record<string, Product> = {
   },
   revercell: {
     image: "/home-product-bloodbag.png",
-    category: { ko: "재생 의학", en: "Regenerative Medicine" },
     badge: { ko: "PREMIUM", en: "PREMIUM" },
     title: { ko: "리버셀 주사", en: "Revercell Injection" },
     tagline: {
@@ -445,11 +438,13 @@ export function ProductDetailView({ id }: { id: string }) {
 
         {/* Details + Actions */}
         <div className="flex flex-col gap-5 pt-2 md:pt-6">
-          <div className="animate-fade-in-up delay-100">
-            <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
-              {product.category[locale]}
-            </span>
-          </div>
+          {product.category && (
+            <div className="animate-fade-in-up delay-100">
+              <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
+                {product.category[locale]}
+              </span>
+            </div>
+          )}
 
           <div className="animate-fade-in-up delay-200">
             <h1 className="text-3xl font-bold leading-tight text-foreground md:text-4xl lg:text-5xl">
@@ -472,57 +467,17 @@ export function ProductDetailView({ id }: { id: string }) {
             ))}
           </ul>
 
-          {/* Price */}
-          <div className="mt-4 flex items-baseline gap-3 animate-fade-in-up delay-500">
-            <span className="text-3xl font-bold text-primary md:text-4xl">{product.price}</span>
-            {product.originalPrice && (
-              <span className="text-base text-muted-foreground line-through">{product.originalPrice}</span>
-            )}
-          </div>
-
-          {/* Quantity selector */}
-          <div className="mt-2 flex items-center gap-4 animate-fade-in-up delay-500">
-            <span className="text-sm font-medium text-foreground/70">
-              {locale === "ko" ? "수량" : "Quantity"}
-            </span>
-            <div className="flex items-center rounded-full border border-border">
-              <button
-                type="button"
-                onClick={decreaseQty}
-                aria-label={locale === "ko" ? "수량 감소" : "Decrease quantity"}
-                className="flex h-10 w-10 items-center justify-center rounded-l-full text-foreground/70 transition-colors hover:bg-secondary hover:text-foreground"
-              >
-                <Minus className="h-4 w-4" />
-              </button>
-              <span className="min-w-[40px] text-center text-base font-semibold text-foreground" aria-live="polite">
-                {quantity}
-              </span>
-              <button
-                type="button"
-                onClick={increaseQty}
-                aria-label={locale === "ko" ? "수량 증가" : "Increase quantity"}
-                className="flex h-10 w-10 items-center justify-center rounded-r-full text-foreground/70 transition-colors hover:bg-secondary hover:text-foreground"
-              >
-                <Plus className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-
-          {/* Actions */}
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row animate-fade-in-up delay-500">
-            <button
-              type="button"
-              className="group flex flex-1 items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-base font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-lg"
+          {/* 가격문의 – KakaoTalk inquiry button */}
+          <div className="mt-6 flex items-center gap-3 animate-fade-in-up delay-500">
+            <Link
+              href="http://pf.kakao.com/_uFxbzb/chat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-1 items-center justify-center gap-2.5 rounded-full bg-primary px-6 py-4 text-base font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-lg"
             >
-              <ShoppingCart className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-              {locale === "ko" ? "구매하기" : "Buy Now"}
-            </button>
-            <button
-              type="button"
-              className="flex flex-1 items-center justify-center gap-2 rounded-full border border-primary/20 bg-accent px-6 py-4 text-base font-semibold text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/70"
-            >
-              {locale === "ko" ? "장바구니 담기" : "Add to Cart"}
-            </button>
+              <MessageCircle className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+              {locale === "ko" ? "가격문의" : "Price Inquiry"}
+            </Link>
             <button
               type="button"
               onClick={() => setWishlisted((w) => !w)}
@@ -536,20 +491,6 @@ export function ProductDetailView({ id }: { id: string }) {
             >
               <Heart className={`h-5 w-5 transition-all ${wishlisted ? "fill-destructive" : ""}`} />
             </button>
-          </div>
-
-          {/* Trust badges */}
-          <div className="mt-6 grid grid-cols-3 gap-3 border-t border-border pt-6 animate-fade-in-up delay-500">
-            {[
-              { icon: Truck, label: locale === "ko" ? "무료 배송" : "Free Shipping" },
-              { icon: ShieldCheck, label: locale === "ko" ? "정품 보증" : "Authenticity" },
-              { icon: RotateCcw, label: locale === "ko" ? "7일 교환" : "7-Day Returns" },
-            ].map(({ icon: Icon, label }) => (
-              <div key={label} className="flex flex-col items-center gap-1.5 text-center">
-                <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
-                <span className="text-xs text-foreground/70">{label}</span>
-              </div>
-            ))}
           </div>
         </div>
       </div>
@@ -656,12 +597,16 @@ function RelatedProducts({ currentId }: { currentId: string }) {
               />
             </div>
             <div className="flex flex-col gap-2 p-5">
-              <span className="text-xs font-medium text-primary/80">{p.category[locale]}</span>
+              {p.category && (
+                <span className="text-xs font-medium text-primary/80">{p.category[locale]}</span>
+              )}
               <h3 className="text-base font-semibold text-foreground transition-colors group-hover:text-primary md:text-lg">
                 {p.title[locale]}
               </h3>
               <p className="text-sm text-foreground/60 line-clamp-2">{p.tagline[locale]}</p>
-              <span className="mt-2 text-base font-bold text-primary">{p.price}</span>
+              {p.price && (
+                <span className="mt-2 text-base font-bold text-primary">{p.price}</span>
+              )}
             </div>
           </Link>
         ))}

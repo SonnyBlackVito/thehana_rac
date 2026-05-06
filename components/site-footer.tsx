@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Youtube, Instagram, Store } from "lucide-react";
+import { Instagram, Store } from "lucide-react";
 import { useI18n } from "@/lib/i18n/context";
 
 export function SiteFooter() {
@@ -105,11 +105,16 @@ export function SiteFooter() {
               <span>{t("footer", "store")}</span>
             </Link>
             <Link
-              href="#"
-              aria-label="YouTube"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff0000] text-background transition-opacity hover:opacity-90"
+              href="http://pf.kakao.com/_uFxbzb/chat"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="카카오톡 상담"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FEE500] text-[#3A1D1D] transition-opacity hover:opacity-90"
             >
-              <Youtube className="h-4 w-4" strokeWidth={2} />
+              {/* KakaoTalk icon */}
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                <path d="M12 3C6.477 3 2 6.805 2 11.5c0 2.94 1.714 5.53 4.32 7.124L5.25 21.5l3.653-2.022C9.57 19.817 10.769 20 12 20c5.523 0 10-3.805 10-8.5S17.523 3 12 3z" />
+              </svg>
             </Link>
             <Link
               href="#"

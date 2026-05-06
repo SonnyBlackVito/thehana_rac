@@ -138,7 +138,7 @@ export const translations = {
     },
     privacy: { ko: "개인정보처리방침", en: "Privacy Policy" },
     emailReject: { ko: "이메일무단수집거부", en: "Anti-Spam Policy" },
-    store: { ko: "인바디스토어", en: "InBody Store" },
+    store: { ko: "더하나스토어", en: "TheHana Store" },
     branches: {
       hq: { ko: "인바디 본사", en: "HQ" },
       factory: { ko: "인바디 공장", en: "Factory" },

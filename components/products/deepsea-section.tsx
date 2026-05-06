@@ -8,16 +8,36 @@ export function DeepSeaSection() {
   const { t } = useI18n()
 
   const products = [
-    { src: "/rewater-pouch.png", alt: "REWATER pouch 350ml", href: "/products/deepsea" },
-    { src: "/rewater-bottle.png", alt: "REWATER bottle", href: "/products/deepsea" },
-    { src: "/rewater-can.png", alt: "REWATER can 190ml", href: "/products/deepsea" },
+    {
+      src: "/rewater-pouch.png",
+      alt: "REWATER pouch 350ml",
+      href: "/products/deepsea/pouch",
+      name: { ko: "리워터 파우치", en: "Re:water Pouch" },
+      sub: "350ml",
+    },
+    {
+      src: "/rewater-bottle.png",
+      alt: "REWATER bottle",
+      href: "/products/deepsea/bottle",
+      name: { ko: "리워터 보틀", en: "Re:water Bottle" },
+      sub: "500ml",
+    },
+    {
+      src: "/rewater-can.png",
+      alt: "REWATER can 190ml",
+      href: "/products/deepsea/can",
+      name: { ko: "리워터 캔", en: "Re:water Can" },
+      sub: "190ml",
+    },
   ]
 
   return (
     <section id="deepsea" className="w-full scroll-mt-24 py-10 md:py-16">
       {/* Title with green accent */}
       <div className="px-4 md:px-20 animate-fade-in-up">
-        <h2 className="text-3xl font-semibold leading-10 text-[#3E454B] md:text-4xl">{t("products", "deepseaSectionTitle")}</h2>
+        <h2 className="text-3xl font-semibold leading-10 text-[#3E454B] md:text-4xl">
+          {t("products", "deepseaSectionTitle")}
+        </h2>
         <div className="mt-4 h-0.5 w-20 bg-[#055239]" />
       </div>
 
@@ -34,29 +54,41 @@ export function DeepSeaSection() {
         <p className="text-pretty text-center text-xl font-medium leading-[1.6] text-[#055239] md:text-[30px] animate-fade-in-up delay-200">
           {t("products", "deepseaGreenHeadline")}
         </p>
-
         <p className="text-pretty text-center text-base leading-[1.6] text-[#3E454B] md:text-xl md:leading-[30px] animate-fade-in-up delay-300">
           {t("products", "deepseaDesc")}
         </p>
       </div>
 
-      {/* Three product images */}
-      <div className="mx-auto mt-14 grid max-w-[1280px] grid-cols-1 gap-10 px-4 sm:grid-cols-3 md:mt-20 md:px-20">
+      {/* Three product cards */}
+      <div className="mx-auto mt-14 grid max-w-[1280px] grid-cols-1 gap-8 px-4 sm:grid-cols-3 md:mt-20 md:px-20">
         {products.map((product, idx) => (
           <Link
             key={product.src}
             href={product.href}
             aria-label={`${product.alt} details`}
-            className={`group flex items-center justify-center animate-fade-in-up delay-${(idx + 1) * 100}`}
+            className={`group flex flex-col items-center animate-fade-in-up delay-${(idx + 1) * 100}`}
           >
-            <div className="relative aspect-[3/4] w-full max-w-[320px] transition-transform duration-300 group-hover:-translate-y-1">
+            {/* Image container */}
+            <div className="relative aspect-[3/4] w-full max-w-[300px] transition-transform duration-300 group-hover:-translate-y-2">
               <Image
                 src={product.src || "/placeholder.svg"}
                 alt={product.alt}
                 fill
-                sizes="(max-width: 640px) 80vw, (max-width: 1024px) 33vw, 320px"
+                sizes="(max-width: 640px) 80vw, (max-width: 1024px) 33vw, 300px"
                 className="object-contain transition-transform duration-500 group-hover:scale-105"
               />
+            </div>
+            {/* Product name */}
+            <div className="mt-5 flex flex-col items-center gap-1 text-center">
+              <span className="text-[18px] font-bold text-[#3E454B] transition-colors duration-300 group-hover:text-[#055239] md:text-[22px]">
+                {product.name.ko}
+              </span>
+              <span className="text-[13px] font-medium text-[#055239]/70 md:text-[15px]">
+                {product.sub}
+              </span>
+              <span className="mt-2 inline-flex items-center gap-1 rounded-full border border-[#055239]/30 px-4 py-1 text-[12px] font-medium text-[#055239] opacity-0 transition-all duration-300 group-hover:opacity-100">
+                자세히 보기 →
+              </span>
             </div>
           </Link>
         ))}
