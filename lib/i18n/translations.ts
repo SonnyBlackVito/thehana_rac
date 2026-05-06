@@ -129,8 +129,8 @@ export const translations = {
     company: { ko: "㈜더하나코퍼레이션", en: "Thehana Corporation Co., Ltd." },
     ceo: { ko: "대표이사 : 한재선", en: "CEO: Jaeseon Han" },
     businessNo: {
-      ko: "사업자등록번호 : 361-81-00506",
-      en: "Business No.: 361-81-00506",
+      ko: "사업자등록번호 : 102-86-03665",
+      en: "Business No.: 102-86-03665",
     },
     address: {
       ko: "주소 : 06017 서울시 강남구 압구정로 306",
