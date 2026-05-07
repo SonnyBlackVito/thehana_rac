@@ -9,19 +9,19 @@ const membershipCards = [
     tier: "GOLD",
     image: "/vip-card-gold.png",
     altKey: "membershipGoldAlt",
-    href: "/press/membership/gold",
+    href: "/member/gold",
   },
   {
     tier: "PLATINUM",
     image: "/vip-card-platinum.png",
     altKey: "membershipPlatinumAlt",
-    href: "/press/membership/platinum",
+    href: "/member/platinum",
   },
   {
     tier: "BLACK",
     image: "/vip-card-black.png",
     altKey: "membershipBlackAlt",
-    href: "/press/membership/black",
+    href: "/member/black",
   },
 ]
 

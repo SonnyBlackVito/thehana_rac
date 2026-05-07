@@ -7,6 +7,7 @@ export const translations = {
     products: { ko: "제품정보", en: "Products" },
     research: { ko: "연구개발", en: "R&D" },
     support: { ko: "고객지원", en: "Support" },
+    member: { ko: "멤버십", en: "Member" },
     press: { ko: "홍보센터", en: "Press" },
     search: { ko: "검색", en: "Search" },
     language: { ko: "언어", en: "Language" },

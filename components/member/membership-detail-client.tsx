@@ -154,32 +154,32 @@ export function MembershipDetailClient({ tier }: { tier: Tier }) {
     <div className="flex min-h-screen flex-col bg-white">
       <SiteHeader />
       <main className="flex-1 bg-[#FBFCFB]">
-        <div className="mx-auto w-full max-w-[1280px] px-4 py-8 md:px-20 md:py-16">
-          <nav className="flex items-center gap-2 text-sm font-medium text-[#8D8D8D]">
+        <div className="mx-auto w-full max-w-[1280px] px-4 py-6 sm:px-6 sm:py-10 lg:px-10 lg:py-14 xl:px-20 xl:py-16">
+          <nav className="flex flex-wrap items-center gap-1.5 text-[12px] font-medium text-[#8D8D8D] sm:gap-2 sm:text-sm">
             <Link href="/" className="transition-colors hover:text-primary">
               {ui.home[locale]}
             </Link>
-            <ChevronRight className="h-4 w-4" aria-hidden="true" />
-            <Link href="/press" className="transition-colors hover:text-primary">
+            <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
+            <Link href="/member" className="transition-colors hover:text-primary">
               {ui.membership[locale]}
             </Link>
-            <ChevronRight className="h-4 w-4" aria-hidden="true" />
+            <ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
             <span className="text-[#3E454B]">{product.label}</span>
           </nav>
 
-          <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-[0.95fr_1.05fr] md:items-center md:gap-16">
+          <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-12 xl:gap-16">
             <div className="flex justify-center">
               <div
-                className="relative flex aspect-square w-full max-w-[560px] items-center justify-center overflow-hidden rounded-[28px] border border-[#E4E7E5] bg-white"
+                className="relative flex aspect-square w-full max-w-[360px] items-center justify-center overflow-hidden rounded-[20px] border border-[#E4E7E5] bg-white sm:max-w-[480px] sm:rounded-[24px] lg:max-w-[560px] lg:rounded-[28px]"
                 style={{ background: product.tint, boxShadow: product.glow }}
               >
-                <div className="relative h-[300px] w-[200px] md:h-[424px] md:w-[281px]">
+                <div className="relative h-[260px] w-[173px] sm:h-[340px] sm:w-[225px] lg:h-[424px] lg:w-[281px]">
                   <Image
                     src={product.image}
                     alt={product.imageAlt[locale]}
                     fill
                     priority
-                    sizes="(max-width: 768px) 200px, 281px"
+                    sizes="(max-width: 640px) 173px, (max-width: 1024px) 225px, 281px"
                     className="object-contain"
                   />
                 </div>
@@ -188,62 +188,62 @@ export function MembershipDetailClient({ tier }: { tier: Tier }) {
 
             <div className="flex flex-col pt-2">
               <span
-                className="inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-[13px] font-bold tracking-[0.14em] text-white shadow-sm"
+                className="inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-bold tracking-[0.12em] text-white shadow-sm sm:gap-2 sm:px-4 sm:py-2 sm:text-[12px] lg:text-[13px] lg:tracking-[0.14em]"
                 style={{ backgroundColor: product.accent }}
               >
-                <Sparkles className="h-4 w-4" aria-hidden="true" />
+                <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
                 {product.label} MEMBERSHIP
               </span>
 
-              <h1 className="mt-5 text-pretty text-[30px] font-bold leading-[1.25] text-[#3E454B] md:text-[44px]">
+              <h1 className="mt-4 text-pretty text-[26px] font-bold leading-[1.25] text-[#3E454B] sm:mt-5 sm:text-[34px] lg:text-[40px] xl:text-[44px]">
                 {product.title[locale]}
               </h1>
 
-              <p className="mt-4 text-pretty text-[20px] font-semibold leading-[1.45] text-primary md:text-[26px]">
+              <p className="mt-3 text-pretty text-[17px] font-semibold leading-[1.45] text-primary sm:mt-4 sm:text-[21px] lg:text-[24px] xl:text-[26px]">
                 {product.tagline[locale]}
               </p>
 
-              <div className="mt-7 space-y-3 rounded-[18px] border border-[#E4E7E5] bg-white p-5 text-[15px] font-medium leading-[1.75] text-[#3E454B] shadow-sm md:p-6 md:text-[17px]">
+              <div className="mt-5 space-y-3 rounded-[14px] border border-[#E4E7E5] bg-white p-4 text-[14px] font-medium leading-[1.7] text-[#3E454B] shadow-sm sm:mt-6 sm:rounded-[16px] sm:p-5 sm:text-[15px] lg:mt-7 lg:rounded-[18px] lg:p-6 lg:text-[16px] xl:text-[17px]">
                 {product.description[locale].map((line) => (
                   <p key={line}>{line}</p>
                 ))}
               </div>
 
-              <ul className="mt-5 grid gap-3 text-[14px] font-medium leading-[22px] text-[#3E454B] md:grid-cols-2 md:text-[15px]">
+              <ul className="mt-4 grid gap-3 text-[13px] font-medium leading-[20px] text-[#3E454B] sm:mt-5 sm:text-[14px] sm:leading-[22px] md:grid-cols-2 lg:text-[15px]">
                 {product.points[locale].map((point) => (
-                  <li key={point} className="flex items-start gap-2 rounded-[12px] bg-white px-4 py-3 shadow-sm ring-1 ring-[#E4E7E5]">
+                  <li key={point} className="flex min-h-12 items-start gap-2 rounded-[12px] bg-white px-3.5 py-3 shadow-sm ring-1 ring-[#E4E7E5] sm:px-4">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
                     <span>{point}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-7 flex flex-col gap-3 md:flex-row md:items-center">
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center lg:mt-7">
                 <Link
                   href="http://pf.kakao.com/_uFxbzb/chat"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-primary px-7 text-[18px] font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-lg"
+                  className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-6 text-[15px] font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-lg sm:min-h-14 sm:w-auto sm:px-7 sm:text-[17px] lg:text-[18px]"
                 >
                   <MessageCircle className="h-5 w-5" aria-hidden="true" />
                   {ui.cta[locale]}
                 </Link>
-                <p className="text-[14px] leading-[22px] text-[#6B6666] md:text-[15px]">
+                <p className="text-center text-[12px] leading-[18px] text-[#6B6666] sm:text-left sm:text-[14px] sm:leading-[22px] lg:text-[15px]">
                   {ui.kakao[locale]}
                 </p>
               </div>
 
-              <p className="mt-8 border-t border-[#D9D9D9] pt-5 text-[12px] font-medium leading-[18px] text-[#7A7F83] md:text-[13px] md:leading-[20px]">
+              <p className="mt-6 border-t border-[#D9D9D9] pt-4 text-[11px] font-medium leading-[17px] text-[#7A7F83] sm:mt-8 sm:pt-5 sm:text-[12px] sm:leading-[18px] lg:text-[13px] lg:leading-[20px]">
                 {legalNotice[locale]}
               </p>
             </div>
           </div>
 
-          <div className="mt-14 border-t border-[#E4E7E5] pt-8 md:mt-20">
-            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+          <div className="mt-10 border-t border-[#E4E7E5] pt-6 sm:mt-14 sm:pt-8 lg:mt-20">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <Link
-                href="/press"
-                className="inline-flex w-fit items-center gap-2 text-[14px] font-semibold text-[#3E454B] transition-colors hover:text-primary"
+                href="/member"
+                className="inline-flex w-fit items-center gap-2 text-[13px] font-semibold text-[#3E454B] transition-colors hover:text-primary sm:text-[14px]"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 {ui.back[locale]}
@@ -257,8 +257,8 @@ export function MembershipDetailClient({ tier }: { tier: Tier }) {
                   return (
                     <Link
                       key={item}
-                      href={`/press/membership/${item}`}
-                      className={`rounded-full border px-4 py-2 text-[13px] font-bold transition-colors ${
+                      href={`/member/${item}`}
+                      className={`rounded-full border px-3.5 py-2 text-[12px] font-bold transition-colors sm:px-4 sm:text-[13px] ${
                         isCurrent
                           ? "border-primary bg-primary text-white"
                           : "border-[#D9D9D9] bg-white text-[#3E454B] hover:border-primary hover:text-primary"

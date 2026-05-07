@@ -8,7 +8,7 @@ export function generateStaticParams() {
   return tiers.map((tier) => ({ tier }))
 }
 
-export default async function MembershipDetailPage({ params }: { params: Promise<{ tier: string }> }) {
+export default async function MemberDetailPage({ params }: { params: Promise<{ tier: string }> }) {
   const { tier } = await params
 
   if (!tiers.includes(tier as (typeof tiers)[number])) {

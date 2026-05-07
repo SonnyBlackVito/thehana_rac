@@ -20,6 +20,7 @@ export function SiteHeader() {
     { label: t("nav", "products"), href: "/products" },
     { label: t("nav", "research"), href: "/research" },
     { label: t("nav", "support"), href: "/support" },
+    { label: t("nav", "member"), href: "/member" },
     { label: t("nav", "press"), href: "/press" },
   ]
 

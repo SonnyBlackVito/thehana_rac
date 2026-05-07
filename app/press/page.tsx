@@ -5,14 +5,12 @@ import { PressCard } from "@/components/news/press-card"
 import { NewsPagination } from "@/components/news/news-pagination"
 import { pressItems } from "@/components/news/news-data"
 import { SocialSection } from "@/components/news/social-section"
-import { MembershipSection } from "@/components/news/membership-section"
 
 export default function NewsPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <SiteHeader />
       <main className="flex-1">
-        <MembershipSection />
         <section className="mx-auto w-full max-w-[1440px] px-0 py-4">
           <NewsListHeader total={92} />
 
