@@ -4,6 +4,7 @@ export type PressItem = {
   body: { ko: string; en: string }
   source: string
   date: string
+  slug?: string
 }
 
 export const pressItems: PressItem[] = [
@@ -19,6 +20,7 @@ export const pressItems: PressItem[] = [
     },
     source: "Medical Today",
     date: "2026 Apr.18",
+    slug: "mindful-technology-design",
   },
   {
     image: "/news-2.png",

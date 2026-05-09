@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, Store } from "lucide-react";
+import { Instagram, Store, Youtube } from "lucide-react";
 import { useI18n } from "@/lib/i18n/context";
 
 export function SiteFooter() {
@@ -59,7 +59,7 @@ export function SiteFooter() {
 
           {/* Right column: branch addresses */}
           <div>
-            {/* <dl className="space-y-3 text-[13px] leading-relaxed text-background/80 sm:space-y-2 sm:text-sm">
+            <dl className="space-y-3 text-[13px] leading-relaxed text-background/80 sm:space-y-2 sm:text-sm">
               {branches.map((branch) => (
                 <div
                   key={branch.label}
@@ -69,7 +69,7 @@ export function SiteFooter() {
                   <dd className="flex-1">{branch.address}</dd>
                 </div>
               ))}
-            </dl> */}
+            </dl>
           </div>
         </div>
 
@@ -115,6 +115,13 @@ export function SiteFooter() {
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
                 <path d="M12 3C6.477 3 2 6.805 2 11.5c0 2.94 1.714 5.53 4.32 7.124L5.25 21.5l3.653-2.022C9.57 19.817 10.769 20 12 20c5.523 0 10-3.805 10-8.5S17.523 3 12 3z" />
               </svg>
+            </Link>
+            <Link
+              href="#"
+              aria-label="YouTube"
+              className="flex h-8 w-8 items-center justify-center rounded-md bg-[#FF0000] text-background transition-opacity hover:opacity-90"
+            >
+              <Youtube className="h-4 w-4" strokeWidth={2} />
             </Link>
             <Link
               href="#"

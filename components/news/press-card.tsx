@@ -1,14 +1,19 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import type { PressItem } from "./news-data"
 import { useI18n } from "@/lib/i18n/context"
 
-export function PressCard({ item }: { item: PressItem }) {
+export function PressCard({ item, index = 0 }: { item: PressItem; index?: number }) {
   const { locale } = useI18n()
+  const href = `/press/${item.slug ?? `news-${index + 1}`}`
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-[12px] border border-[#CCCCCC] transition-colors hover:border-[#055239]">
+    <Link
+      href={href}
+      className="group flex h-full flex-col overflow-hidden rounded-[12px] border border-[#CCCCCC] transition-colors hover:border-[#055239]"
+    >
       {/* Image */}
       <div className="relative aspect-[390/219] w-full overflow-hidden bg-muted">
         <Image
@@ -37,6 +42,6 @@ export function PressCard({ item }: { item: PressItem }) {
           <time>{item.date}</time>
         </div>
       </div>
-    </article>
+    </Link>
   )
 }
