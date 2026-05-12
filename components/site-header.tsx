@@ -4,7 +4,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState, useRef } from "react"
-import { Search, Menu, Globe, X, ChevronDown } from "lucide-react"
+import { Search, Menu, Globe, X, ChevronDown, LogIn, LogOut, UserRound } from "lucide-react"
+import { useAuth } from "@/hooks/use-auth"
 import { useI18n } from "@/lib/i18n/context"
 import type { Locale } from "@/lib/i18n/translations"
 
@@ -14,6 +15,8 @@ export function SiteHeader() {
   const [langOpen, setLangOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
   const { locale, setLocale, t } = useI18n()
+  const { user, isAuthenticated, signOut } = useAuth()
+  const loginHref = `/login?redirect=${encodeURIComponent(pathname || "/")}`
 
   const navItems = [
     { label: t("nav", "about"), href: "/about" },
@@ -166,6 +169,34 @@ export function SiteHeader() {
             )}
           </div>
 
+          {isAuthenticated ? (
+            <div className="hidden items-center gap-2 lg:flex">
+              <Link
+                href="/dashboard"
+                className="inline-flex h-9 items-center gap-2 rounded-full border border-border px-3 text-[13px] font-medium text-foreground/80 transition-colors hover:border-primary hover:text-primary"
+              >
+                <UserRound className="h-4 w-4" strokeWidth={1.7} />
+                <span className="max-w-[120px] truncate">{user?.name || user?.email || t("dashboard", "eyebrow")}</span>
+              </Link>
+              <button
+                type="button"
+                onClick={signOut}
+                className="inline-flex h-9 items-center gap-2 rounded-full bg-primary px-3 text-[13px] font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                <LogOut className="h-4 w-4" strokeWidth={1.7} />
+                <span>{t("dashboard", "signOut")}</span>
+              </button>
+            </div>
+          ) : (
+            <Link
+              href={loginHref}
+              className="hidden h-9 items-center gap-2 rounded-full bg-primary px-4 text-[13px] font-semibold text-primary-foreground transition-colors hover:bg-primary/90 lg:inline-flex"
+            >
+              <LogIn className="h-4 w-4" strokeWidth={1.7} />
+              <span>{t("auth", "goLogin")}</span>
+            </Link>
+          )}
+
           <button
             type="button"
             aria-label={t("nav", "openMenu")}
@@ -244,6 +275,33 @@ export function SiteHeader() {
                     </li>
                   )
                 })}
+                <li>
+                  {isAuthenticated ? (
+                    <Link
+                      href="/dashboard"
+                      className={`flex items-center justify-between border-b border-border px-6 py-4 text-[16px] font-medium transition-colors ${
+                        pathname === "/dashboard"
+                          ? "bg-muted/50 text-primary"
+                          : "text-foreground hover:bg-muted/40 hover:text-primary"
+                      }`}
+                    >
+                      <span>{user?.name || user?.email || t("dashboard", "eyebrow")}</span>
+                      <UserRound className="h-4 w-4" strokeWidth={1.7} />
+                    </Link>
+                  ) : (
+                    <Link
+                      href={loginHref}
+                      className={`flex items-center justify-between border-b border-border px-6 py-4 text-[16px] font-medium transition-colors ${
+                        pathname === "/login"
+                          ? "bg-muted/50 text-primary"
+                          : "text-foreground hover:bg-muted/40 hover:text-primary"
+                      }`}
+                    >
+                      <span>{t("auth", "goLogin")}</span>
+                      <LogIn className="h-4 w-4" strokeWidth={1.7} />
+                    </Link>
+                  )}
+                </li>
               </ul>
             </nav>
 
@@ -285,6 +343,22 @@ export function SiteHeader() {
                 </button>
               </div>
             </div>
+
+            {isAuthenticated ? (
+              <div className="border-t border-border px-6 py-4">
+                <button
+                  type="button"
+                  onClick={() => {
+                    signOut()
+                    setOpen(false)
+                  }}
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                >
+                  <LogOut className="h-4 w-4" strokeWidth={1.7} />
+                  <span>{t("dashboard", "signOut")}</span>
+                </button>
+              </div>
+            ) : null}
           </div>
         </div>
       )}
