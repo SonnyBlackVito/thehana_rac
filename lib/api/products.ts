@@ -9,6 +9,8 @@ export interface Product {
   price: number
   stock: number
   images: string[]
+  category_id?: string
+  min_tier?: "silver" | "gold" | "platinum"
   created_by: string
   is_active: boolean
   created_at: string

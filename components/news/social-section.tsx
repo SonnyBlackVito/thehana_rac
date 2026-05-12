@@ -4,6 +4,7 @@ import Image from "next/image"
 import { useState } from "react"
 import { NewsPagination } from "./news-pagination"
 import { useI18n } from "@/lib/i18n/context"
+import { usePosts } from "@/hooks/use-posts"
 
 const instagramItems = [
   { image: "/social-1.png", title: { ko: "더하나 R.A.C 공식 인터뷰 현장", en: "THE HANA R.A.C Official Interview" }, caption: { ko: "리버스 에이징 기술의 미래를 말하다 #THEHANA #RAC", en: "Talking about the future of reverse aging technology #THEHANA #RAC" }, date: "2025.12.15" },
@@ -34,7 +35,16 @@ type Tab = "instagram" | "youtube"
 export function SocialSection() {
   const [activeTab, setActiveTab] = useState<Tab>("instagram")
   const { locale, t } = useI18n()
-  const items = activeTab === "instagram" ? instagramItems : youtubeItems
+  const { items: apiPosts } = usePosts({ limit: 18, offset: 0 })
+  const apiItems = apiPosts
+    .filter((post) => post.content.toLowerCase().includes(`channel: ${activeTab}`))
+    .map((post) => ({
+      image: post.images?.[0] || "/placeholder.svg",
+      title: { ko: post.title, en: post.title },
+      caption: { ko: post.content, en: post.content },
+      date: new Date(post.created_at).toLocaleDateString("ko-KR"),
+    }))
+  const items = apiItems.length > 0 ? apiItems : activeTab === "instagram" ? instagramItems : youtubeItems
   const heading = t("press", activeTab)
 
   return (

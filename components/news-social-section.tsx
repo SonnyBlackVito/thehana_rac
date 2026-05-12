@@ -3,6 +3,9 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useI18n } from "@/lib/i18n/context"
+import { useBlogs } from "@/hooks/use-blogs"
+import { usePosts } from "@/hooks/use-posts"
+import { apiPostToNewsItem } from "@/components/news/api-mappers"
 
 type Category = "press" | "event" | "research"
 
@@ -118,6 +121,21 @@ function NewsCard({
 
 export function NewsSocialSection() {
   const { locale, t } = useI18n()
+  const { items: apiBlogs } = useBlogs({ limit: 2, offset: 0, status: "published", tag: "press" })
+  const { items: apiPosts } = usePosts({ limit: 2, offset: 0 })
+  const newsItems =
+    apiBlogs.length > 0
+      ? apiBlogs.map((blog) => ({
+          category: "press" as const,
+          title: { ko: blog.title, en: blog.title },
+          date: blog.published_at
+            ? new Date(blog.published_at).toLocaleDateString("ko-KR")
+            : new Date(blog.created_at).toLocaleDateString("ko-KR"),
+          image: blog.cover_image || blog.images?.[0] || "/placeholder.svg",
+          href: `/press/${blog.slug}`,
+        }))
+      : latestNews
+  const socialItems = apiPosts.length > 0 ? apiPosts.map(apiPostToNewsItem) : socialPosts
 
   return (
     <section aria-labelledby="news-social-heading" className="w-full bg-background">
@@ -132,7 +150,7 @@ export function NewsSocialSection() {
             <MoreButton label={t("newsSocial", "more")} />
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {latestNews.map((item, i) => (
+            {newsItems.map((item, i) => (
               <NewsCard key={`news-${i}`} item={item} locale={locale} t={t} />
             ))}
           </div>
@@ -145,7 +163,7 @@ export function NewsSocialSection() {
             <MoreButton label={t("newsSocial", "more")} />
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {socialPosts.map((item, i) => (
+            {socialItems.slice(0, 2).map((item, i) => (
               <NewsCard key={`social-${i}`} item={item} locale={locale} t={t} />
             ))}
           </div>
