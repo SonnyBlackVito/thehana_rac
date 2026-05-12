@@ -50,7 +50,7 @@ export function RevercellSection() {
           <h3 className="text-balance text-[22px] font-medium leading-[1.4] text-primary md:text-[30px] md:leading-[48px] animate-fade-in-up delay-300">
             {t("products", "revercellMechanism")}
           </h3>
-          <p className="text-pretty text-[14px] leading-[1.9] text-foreground/80 md:text-[15px] md:leading-[2] animate-fade-in-up delay-400">
+          <p className="text-pretty text-left text-[14px] leading-[1.9] text-foreground/80 md:text-[15px] md:leading-[2] animate-fade-in-up delay-400">
             {t("products", "revercellDesc")}
           </p>
         </div>

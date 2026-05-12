@@ -54,7 +54,7 @@ export function DeepSeaSection() {
         <p className="text-pretty text-center text-xl font-medium leading-[1.6] text-[#055239] md:text-[30px] animate-fade-in-up delay-200">
           {t("products", "deepseaGreenHeadline")}
         </p>
-        <p className="text-pretty text-center text-base leading-[1.6] text-[#3E454B] md:text-xl md:leading-[30px] animate-fade-in-up delay-300">
+        <p className="text-pretty text-left text-base leading-[1.6] text-[#3E454B] md:text-xl md:leading-[30px] animate-fade-in-up delay-300">
           {t("products", "deepseaDesc")}
         </p>
       </div>

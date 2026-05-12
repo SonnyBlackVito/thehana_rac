@@ -17,7 +17,7 @@ export function ProductsIntro() {
         {t("products", "introSubtitle")}
       </h3>
 
-      <p className="mt-8 text-sm md:text-[15px] leading-relaxed text-muted-foreground text-pretty animate-fade-in-up delay-300">
+      <p className="mt-8 text-left text-sm md:text-[15px] leading-relaxed text-muted-foreground text-pretty animate-fade-in-up delay-300">
         {t("products", "introDesc")}
       </p>
     </section>
