@@ -7,7 +7,13 @@ import { Button } from "@/components/ui/button"
 import { useAuth } from "@/hooks/use-auth"
 import { useI18n } from "@/lib/i18n/context"
 
-export function GoogleButton({ label }: { label?: string }) {
+export function GoogleButton({
+  label,
+  redirectTo,
+}: {
+  label?: string
+  redirectTo?: string | null
+}) {
   const { t } = useI18n()
   const { startGoogleLogin } = useAuth()
   const [loading, setLoading] = useState(false)
@@ -21,7 +27,7 @@ export function GoogleButton({ label }: { label?: string }) {
       onClick={async () => {
         try {
           setLoading(true)
-          await startGoogleLogin()
+          await startGoogleLogin(redirectTo)
         } catch (e) {
           setLoading(false)
           toast.error(

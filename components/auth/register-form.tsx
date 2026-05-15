@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { useMemo, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -20,13 +20,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
-import { GoogleButton } from "@/components/auth/google-button"
 import { useAuth } from "@/hooks/use-auth"
 import { useI18n } from "@/lib/i18n/context"
 import { ApiError } from "@/lib/api/client"
 
 export function RegisterForm() {
   const router = useRouter()
+  const params = useSearchParams()
   const { t } = useI18n()
   const { register } = useAuth()
   const [submitting, setSubmitting] = useState(false)
@@ -66,7 +66,7 @@ export function RegisterForm() {
         password: values.password,
       })
       toast.success(t("auth", "successRegister"))
-      router.replace("/dashboard")
+      router.replace(params.get("redirect") || "/dashboard")
     } catch (e) {
       const msg =
         e instanceof ApiError
@@ -167,18 +167,16 @@ export function RegisterForm() {
           )}
         </Button>
 
-        <div className="relative my-2 flex items-center justify-center">
-          <span className="absolute h-px w-full bg-border" />
-          <span className="relative bg-background px-3 text-xs uppercase tracking-wide text-muted-foreground">
-            {t("auth", "or")}
-          </span>
-        </div>
-
-        <GoogleButton label={t("auth", "registerGoogle")} />
-
         <p className="text-center text-sm text-muted-foreground">
           {t("auth", "haveAccount")}{" "}
-          <Link href="/login" className="font-medium text-foreground hover:underline">
+          <Link
+            href={
+              params.get("redirect")
+                ? `/login?redirect=${encodeURIComponent(params.get("redirect") || "")}`
+                : "/login"
+            }
+            className="font-medium text-foreground hover:underline"
+          >
             {t("auth", "goLogin")}
           </Link>
         </p>

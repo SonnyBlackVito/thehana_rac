@@ -33,8 +33,13 @@ export function useAuth() {
     [setSession],
   )
 
-  const startGoogleLogin = useCallback(async () => {
-    const { url } = await AuthApi.googleAuthURL("rac-state")
+  const startGoogleLogin = useCallback(async (redirectTo?: string | null) => {
+    const safeRedirect =
+      redirectTo && redirectTo.startsWith("/") && !redirectTo.startsWith("//")
+        ? redirectTo
+        : "/dashboard"
+    const state = `redirect=${encodeURIComponent(safeRedirect)}`
+    const { url } = await AuthApi.googleAuthURL(state)
     window.location.href = url
   }, [])
 

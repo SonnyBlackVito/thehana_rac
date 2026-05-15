@@ -630,6 +630,23 @@ export const translations = {
     fieldEmail: { ko: "이메일", en: "Email" },
     fieldRole: { ko: "역할", en: "Role" },
     fieldProvider: { ko: "로그인 방식", en: "Sign-in provider" },
+    fieldApproval: { ko: "승인 상태", en: "Approval status" },
+    approved: { ko: "승인됨", en: "Approved" },
+    pending: { ko: "승인 대기", en: "Pending approval" },
+    pendingTitle: { ko: "계정 승인 대기 중", en: "Your account is pending approval" },
+    pendingDesc: {
+      ko: "회원가입이 완료되었습니다. 담당자가 계정을 확인한 뒤 서비스 이용 권한이 활성화됩니다.",
+      en: "Your account has been created. Access will be enabled after an administrator reviews and approves it.",
+    },
+    pendingEmailNote: {
+      ko: "승인 결과는 등록한 이메일 기준으로 확인됩니다.",
+      en: "Approval will be associated with your registered email address.",
+    },
+    pendingReview: { ko: "관리자 검토 필요", en: "Administrator review required" },
+    pendingReviewNote: {
+      ko: "승인 전에는 구매 및 멤버십 기능 이용이 제한될 수 있습니다.",
+      en: "Purchasing and membership features may be limited until approval is complete.",
+    },
     signOut: { ko: "로그아웃", en: "Sign out" },
   },
 

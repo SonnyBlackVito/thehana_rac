@@ -14,6 +14,16 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { useAuth } from "@/hooks/use-auth"
 import { useI18n } from "@/lib/i18n/context"
 
+function redirectFromState(state?: string | null) {
+  if (!state) return "/dashboard"
+  const parsed = new URLSearchParams(state)
+  const redirect = parsed.get("redirect")
+  if (redirect && redirect.startsWith("/") && !redirect.startsWith("//")) {
+    return redirect
+  }
+  return "/dashboard"
+}
+
 function GoogleCallbackInner() {
   const router = useRouter()
   const params = useSearchParams()
@@ -29,7 +39,7 @@ function GoogleCallbackInner() {
       return
     }
     completeGoogleLogin(code, state)
-      .then(() => router.replace("/dashboard"))
+      .then(() => router.replace(redirectFromState(state)))
       .catch((e) =>
         setError(e?.message || t("auth", "googleGenericError")),
       )

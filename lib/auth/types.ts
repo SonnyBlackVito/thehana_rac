@@ -9,6 +9,7 @@ export interface User {
   role: Role
   provider: Provider
   is_active: boolean
+  is_approved: boolean
   created_at: string
   updated_at: string
 }

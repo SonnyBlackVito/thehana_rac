@@ -3,13 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
-import { useProducts } from "@/hooks/use-products";
 
 export function ProductGrid() {
   const { t } = useI18n();
-  const { items: apiProducts } = useProducts({ limit: 6, offset: 0 });
 
-  const fallbackProducts = [
+  const products = [
     { name: t("products", "gridActivator"), image: "/grid-activator.png", alt: "Blood Activator", href: "/products/activator" },
     { name: t("products", "gridMini"), image: "/grid-activator-mini.png", alt: "Blood Activator MINI", href: "/products/mini" },
     { name: t("products", "gridSeparator"), image: "/grid-blood-separator.png", alt: "Blood Separator", href: "/products/separator" },
@@ -17,15 +15,6 @@ export function ProductGrid() {
     { name: "ACT PRF D", image: "/product-act-bms30.png", alt: "ACT BMS 30 Kit", href: "/#" },
     { name: "ACT BMS 30", image: "/product-act-prp-d.png", alt: "ACT PRP-D Kit", href: "/#" },
   ];
-  const products =
-    apiProducts.length > 0
-      ? apiProducts.map((product) => ({
-          name: product.name,
-          image: product.images?.[0] || "/placeholder.svg",
-          alt: product.name,
-          href: `/shop/${product.id}`,
-        }))
-      : fallbackProducts;
 
   return (
     <section id="activator" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 md:py-28">

@@ -1,5 +1,7 @@
 "use client"
 
+import { Suspense } from "react"
+
 import {
   Card,
   CardContent,
@@ -20,7 +22,9 @@ export default function RegisterPage() {
           <CardDescription>{t("auth", "registerDescription")}</CardDescription>
         </CardHeader>
         <CardContent>
-          <RegisterForm />
+          <Suspense fallback={null}>
+            <RegisterForm />
+          </Suspense>
         </CardContent>
       </Card>
     </main>

@@ -19,7 +19,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
-import { GoogleButton } from "@/components/auth/google-button"
 import { useAuth } from "@/hooks/use-auth"
 import { useI18n } from "@/lib/i18n/context"
 import { ApiError } from "@/lib/api/client"
@@ -118,18 +117,16 @@ export function LoginForm() {
           )}
         </Button>
 
-        <div className="relative my-2 flex items-center justify-center">
-          <span className="absolute h-px w-full bg-border" />
-          <span className="relative bg-background px-3 text-xs uppercase tracking-wide text-muted-foreground">
-            {t("auth", "or")}
-          </span>
-        </div>
-
-        <GoogleButton />
-
         <p className="text-center text-sm text-muted-foreground">
           {t("auth", "noAccount")}{" "}
-          <Link href="/register" className="font-medium text-foreground hover:underline">
+          <Link
+            href={
+              params.get("redirect")
+                ? `/register?redirect=${encodeURIComponent(params.get("redirect") || "")}`
+                : "/register"
+            }
+            className="font-medium text-foreground hover:underline"
+          >
             {t("auth", "goRegister")}
           </Link>
         </p>
