@@ -23,6 +23,7 @@ import {
 import { useAuth } from "@/hooks/use-auth"
 import { useI18n } from "@/lib/i18n/context"
 import { ApiError } from "@/lib/api/client"
+import { GoogleButton } from "@/components/auth/google-button"
 
 export function RegisterForm() {
   const router = useRouter()
@@ -166,6 +167,22 @@ export function RegisterForm() {
             t("auth", "submitRegister")
           )}
         </Button>
+
+        <div className="relative py-1">
+          <div className="absolute inset-0 flex items-center">
+            <span className="w-full border-t" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-card px-2 text-muted-foreground">
+              {t("auth", "or")}
+            </span>
+          </div>
+        </div>
+
+        <GoogleButton
+          label={t("auth", "registerGoogle")}
+          redirectTo={params.get("redirect")}
+        />
 
         <p className="text-center text-sm text-muted-foreground">
           {t("auth", "haveAccount")}{" "}
